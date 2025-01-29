@@ -124,7 +124,7 @@ export default function Navigation() {
         </li> */}
         <li className={styles.navItem}>
           <NavLink
-            to="/admin-planner"
+            to="/admin-planner/calendar"
             className={({ isActive }) =>
               clsx(styles.navLink, {
                 [styles.active]: isActive,

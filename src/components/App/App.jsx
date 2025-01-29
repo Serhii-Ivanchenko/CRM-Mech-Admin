@@ -18,6 +18,7 @@ import firstPage from "../../utils/firstPage.js";
 import css from "./App.module.css";
 import Header from "../Header/Header.jsx";
 import SideBar from "../SideBar/SideBar.jsx";
+import AdminPlannerPage from "../../pages/AdminPlannerPage/AdminPlannerPage.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage.jsx"));
@@ -25,9 +26,9 @@ const RegistrationPage = lazy(() =>
   import("../../pages/RegistrationPage/RegistrationPage.jsx")
 );
 const MainPage = lazy(() => import("../../pages/MainPage/MainPage.jsx"));
-const VideoControlPage = lazy(() =>
-  import("../../pages/VideoControlPage/VideoControlPage.jsx")
-);
+// const VideoControlPage = lazy(() =>
+//   import("../../pages/VideoControlPage/VideoControlPage.jsx")
+// );
 const CRMPage = lazy(() => import("../../pages/CRMPage/CRMPage.jsx"));
 const ConnectionsPage = lazy(() =>
   import("../../pages/ConnectionsPage/ConnectionsPage.jsx")
@@ -73,7 +74,9 @@ const Equipment = lazy(() =>
 //   import("../../pages/ReportsPage/ReportsPage.jsx")
 // );
 
-const ReportsClientsPage = lazy(() => import('../../pages/ReportsPage/ReportsClientsPage/ReportsClientsPage.jsx'))
+const ReportsClientsPage = lazy(() =>
+  import("../../pages/ReportsPage/ReportsClientsPage/ReportsClientsPage.jsx")
+);
 
 const SettingsPage = lazy(() =>
   import("../../pages/SettingsPage/SettingsPage.jsx")
@@ -179,10 +182,15 @@ export default function App() {
                     element={
                       <PrivateRoute
                         redirectTo="/login"
-                        component={<CRMPage />}
+                        component={<AdminPlannerPage />}
                       />
                     }
-                  />
+                  >
+                    {/* <Route path="calendar" element={<AdminCalendar />} /> */}
+                    {/* <Route path="leads" element={<Leads />} /> */}
+                    {/* <Route path="clients" element={<Clients />} /> */}
+                  </Route>
+
                   <Route
                     path="/connections"
                     element={
@@ -241,8 +249,8 @@ export default function App() {
                     path="/accounting/documents"
                     element={
                       <PrivateRoute
-                      redirectTo="/login"
-                      component={<InvoicesPage />}
+                        redirectTo="/login"
+                        component={<InvoicesPage />}
                       />
                     }
                   >
@@ -264,20 +272,20 @@ export default function App() {
                     path="/reports/clients"
                     element={
                       <PrivateRoute
-                      redirectTo="/login"
-                      component={<ReportsClientsPage />}
+                        redirectTo="/login"
+                        component={<ReportsClientsPage />}
                       />
                     }
                   />
-                    <Route
-                      path="/reports/distributors"
-                      element={
-                        <PrivateRoute
-                          redirectTo="/login"
-                          component={<DistributorsPage />}
-                        />
-                      }
-                    />
+                  <Route
+                    path="/reports/distributors"
+                    element={
+                      <PrivateRoute
+                        redirectTo="/login"
+                        component={<DistributorsPage />}
+                      />
+                    }
+                  />
                   <Route
                     path="/settings"
                     element={
