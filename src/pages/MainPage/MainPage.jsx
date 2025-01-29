@@ -5,11 +5,7 @@ import css from "./MainPage.module.css";
 export default function MainPage() {
   return (
     <div className={css.wrapper}>
-      <Header />
-      <div className={css.contentContainer}>
-        <SideBar />
-        <div>Main Page Content</div>
-      </div>
+      <div>Main Page Content</div>
     </div>
   );
 }

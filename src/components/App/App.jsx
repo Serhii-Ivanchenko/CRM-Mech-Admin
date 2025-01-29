@@ -165,7 +165,7 @@ export default function App() {
                       />
                     }
                   />
-                  <Route
+                  {/* <Route
                     path="/video-control"
                     element={
                       <PrivateRoute
@@ -173,7 +173,7 @@ export default function App() {
                         component={<VideoControlPage />}
                       />
                     }
-                  />
+                  /> */}
                   <Route
                     path="/crm"
                     element={

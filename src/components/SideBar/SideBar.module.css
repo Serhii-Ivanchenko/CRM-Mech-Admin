@@ -1,7 +1,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 23px;
 
   border-radius: 12px;
   background: var(--bg-secondary);
@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 5px;
   flex-grow: 1;
   gap: 10px;
   overflow-y: auto;

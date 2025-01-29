@@ -82,7 +82,7 @@ export default function Navigation() {
             className={({ isActive }) =>
               clsx(styles.navLink, {
                 [styles.active]: isActive,
-                [styles.disabled]: true,
+                // [styles.disabled]: true,
                 [styles.navWithChat]: chatIsOpen,
               })
             }
@@ -99,7 +99,7 @@ export default function Navigation() {
             </span>
           </NavLink>
         </li>
-        <li className={styles.navItem}>
+        {/* <li className={styles.navItem}>
           <NavLink
             to="/video-control"
             className={({ isActive }) =>
@@ -121,7 +121,7 @@ export default function Navigation() {
               Моніторинг
             </span>
           </NavLink>
-        </li>
+        </li> */}
         <li className={styles.navItem}>
           <NavLink
             to="/crm"
