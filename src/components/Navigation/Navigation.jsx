@@ -124,7 +124,7 @@ export default function Navigation() {
         </li> */}
         <li className={styles.navItem}>
           <NavLink
-            to="/crm"
+            to="/admin-planner"
             className={({ isActive }) =>
               clsx(styles.navLink, {
                 [styles.active]: isActive,
@@ -297,6 +297,7 @@ export default function Navigation() {
               clsx(styles.navLink, {
                 [styles.active]: isActive,
                 [styles.navWithChat]: chatIsOpen,
+                [styles.disabled]: true,
               })
             }
           >

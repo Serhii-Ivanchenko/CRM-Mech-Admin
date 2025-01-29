@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://aps.assist.cam",
+  baseURL: "",
 });
 
 export const setAuthHeader = (api_key) => {

@@ -175,7 +175,7 @@ export default function App() {
                     }
                   /> */}
                   <Route
-                    path="/crm"
+                    path="/admin-planner"
                     element={
                       <PrivateRoute
                         redirectTo="/login"
