@@ -1,0 +1,444 @@
+.itemOfAccardion {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.itemOfMarking {
+  padding-top: 13px;
+}
+
+.circle {
+  margin-bottom: 1px;
+  fill: var(--blue-btn-normal);
+  width: 24px;
+  height: 24px;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background: var(--bg-input);
+  margin: auto;
+}
+
+.itemOfAccardion:last-of-type .line {
+  width: 0;
+  height: 0;
+  background: none;
+}
+
+.itemIcon,
+.MuiAccordion-region {
+  background-color: var(--bg-secondary);
+}
+
+.listItemWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.listItem {
+  width: 640px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  padding: 0px 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  background-color: var(--bg-input);
+}
+
+.kilometersWrapper,
+.dateWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.kilometersWrapper {
+  gap: 10px;
+}
+
+.dateWrapper {
+  gap: 20px;
+}
+
+.numberOfKilometers,
+.kilometersDriven,
+.date {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 24px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.numberOfKilometers>div,
+.kilometersDriven>div,
+.date>div {
+  height: 16px;
+}
+
+.numberOfKilometers {
+  color: var(--current-mileage-text);
+  background: var(--current-mileage-bg);
+  max-width: 170px;
+}
+
+.mileageInput {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  max-width: 106px;
+
+  color: var(--current-mileage-text);
+  font-weight: 600;
+}
+
+.kilometersDriven {
+  color: var(--last-service-mileage-text);
+  background: var(--last-service-mileage-bg);
+}
+
+.date {
+  color: var(--red);
+  background: var(--visit-date-bg);
+}
+
+.unActiveDialogBtn {
+  border: none;
+  background: none;
+  transition: transform 200ms cubic-bezier(0.42, 0.69, 1, 1.04);
+}
+
+.activeDialogBtn {
+  background-color: none;
+  transform: rotate(180deg);
+}
+
+.dialogBtnIcon {
+  color: var(--icon-gray);
+  display: flex;
+  cursor: pointer;
+}
+
+/* Тіло першого акардіона */
+:global(.MuiAccordionSummary-root) {
+  min-height: 0px !important;
+}
+
+:global(.MuiAccordionSummary-content) {
+  margin: 0 !important;
+  display: block !important;
+}
+
+:global(.MuiPaper-root::before) {
+  display: none;
+}
+
+.bodyAccardionWrapper {
+  margin-top: 14px;
+}
+
+.btnDownloadsWrapper {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 8px; */
+  padding: 12px 9px 14px;
+  border-radius: 6px;
+  background-color: var(--bg-input);
+  z-index: 5;
+}
+
+.btnDownloadsItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  color: #fff;
+  border-radius: 6px;
+  background: var(--download-pdf-btn-bg);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  line-height: 1.1875em;
+  border: none;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+  color: var(--light-gray);
+  border-radius: 6px;
+  background: var(--bg-input);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+.btnBg {
+  background: var(--green-btn-normal);
+}
+
+.RecordBtnInfoWrapper {
+  border-radius: 6px;
+  background: var(--bg-input);
+  overflow: hidden;
+  max-height: 0px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: opacity 300ms cubic-bezier(0.42, 0.69, 1, 1.04),
+    max-height 300ms cubic-bezier(0.42, 0.69, 1, 1.04),
+    padding 300ms cubic-bezier(0.42, 0.69, 1, 1.04),
+    margin-top 300ms cubic-bezier(0.42, 0.69, 1, 1.04);
+}
+
+.openRecordBtnInfoWrapper {
+  /* display: flex; */
+  max-height: 500px;
+  opacity: 1;
+  padding: 15px 14px 32px 14px;
+  margin-top: 14px;
+  width: 640px;
+}
+
+.closeRecordBtnInfoWrapper {
+  max-height: 0px;
+  opacity: 0;
+  padding: 0;
+  margin-top: 0;
+}
+
+/* Хедер другого акардіона */
+
+.secondAcordionList {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.secondAcordionWrapper {
+  padding: 10px 12.5px;
+  width: 430px;
+  border-radius: 12px;
+  background: #31353e;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.amountBox {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+
+  height: 20px;
+}
+
+.amountWrapper {
+  border-radius: 6px;
+  background: var(--main-gray);
+  padding: 2px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  gap: 2px;
+}
+
+.amount {
+  color: var(--white);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  height: 16px;
+}
+
+.iconDollar {
+  fill: var(--green);
+}
+
+.amountInput {
+  width: 100%;
+  max-width: 50px;
+  height: 100%;
+  background-color: transparent;
+  font-size: 14px;
+  border: none;
+  outline: none;
+
+  color: var(--white);
+}
+
+/* .secondAcordion {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  flex-shrink: 0;
+  position: relative;
+} */
+
+/* .callRecordWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+}
+
+.callRecordWrapper > img {
+  width: 48px;
+  height: 48px;
+}
+
+.callTranscription {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 252px;
+  height: 70px;
+  border-radius: 0px 10px 10px 10px;
+  background-color: var(--contacts-info-bg);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.wrapperOfUiElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  height: 100%;
+}
+
+.transcriptionBtn {
+  z-index: 5;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-left: 21px;
+  border: none;
+  background: var(--white, #fff);
+  border-radius: 50%;
+}
+
+.customSlider {
+  padding: 0px !important;
+  box-sizing: content-box !important;
+  position: absolute !important;
+  height: 100% !important;
+}
+
+:global(.MuiSlider-thumb) {
+  display: none !important;
+}
+
+:global(.MuiSlider-track) {
+  border: none !important;
+  background: var(--player-secondary-bg) !important;
+}
+
+:global(.MuiSlider-rail) {
+  cursor: ew-resize !important;
+  z-index: 3 !important;
+  height: 100% !important;
+  background-color: #ffffff00 !important;
+} */
+
+/* .transcriptionToggleBtn {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  background: var(--player-secondary-bg);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.transcriptionToggleBtn > p {
+  font-size: 16px;
+  font-weight: 600;
+} */
+
+/* Тіло другого акардіона */
+
+/* .scrollBarWrapper {
+  padding: 11px 10px 10px 21px;
+  margin-top: 10px;
+  border-radius: 12px;
+  background: #2c2d31;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+} */
+
+/* .secondAcordionBody {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+  align-items: flex-end;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow-y: scroll;
+} */
+
+/* .secondAcordionBody::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+}
+
+.secondAcordionBody::-webkit-scrollbar-thumb {
+  background: var(--player-secondary-bg);
+  border-radius: 4px;
+}
+
+.secondAcordionBody::-webkit-scrollbar-track {
+  background: #202020;
+  border-radius: 4px;
+} */
+
+/* .transcriptionImportantBtn {
+  display: flex;
+  gap: 5px;
+  padding: 2px 6px;
+  color: var(--white);
+  border-radius: 6px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  background-color: var(--player-secondary-bg);
+}
+
+.transcriptionImportantBtn > p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.transcriptionIcon {
+  transition: transform 200ms cubic-bezier(0.42, 0.69, 1, 1.04);
+}
+
+.activeTranscriptionIcon {
+  transform: rotate(180deg);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+} */

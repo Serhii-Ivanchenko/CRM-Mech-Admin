@@ -1,0 +1,137 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.userInfo {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.name {
+  color: var(--CRM-modal-LightGray, #d8e1ff);
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.1875em;
+}
+
+.time {
+  color: #828a9e;
+  /* font-family: "Raleway", sans-serif; */
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.message {
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* width: 440px; */
+  /* margin-top: 6px; */
+  width: fit-content;
+  margin-left: 45px;
+  padding: 14px 16px;
+  background: var(--CRM-modal-SecondaryBG, #23252c);
+  border-radius: 0px 12px 12px 12px;
+}
+
+.message > p,
+.messageManager > p {
+  color: #fff;
+
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1875;
+  max-width: 400px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.managerInfo {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+
+.messageManager {
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: 45px;
+  padding: 14px 16px;
+  background: var(--CRM-modal-BlueBtnNormal, #3956cc);
+  border-radius: 12px 0px 12px 12px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.audioPlayer {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  position: relative;
+}
+
+.modalImage {
+  max-height: 860px;
+  max-width: 1100px;
+  border-radius: 8px;
+}
+
+.modal:hover {
+  cursor: pointer;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  gap: 6px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+}
+
+.downloadBtn:hover {
+  text-decoration: underline;
+}

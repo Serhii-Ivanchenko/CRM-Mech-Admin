@@ -1,0 +1,7 @@
+.serviceDetailsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  height: 100%;
+  scroll-behavior: smooth;
+}

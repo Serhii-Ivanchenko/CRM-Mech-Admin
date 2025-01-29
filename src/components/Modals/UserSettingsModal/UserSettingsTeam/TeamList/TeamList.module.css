@@ -1,0 +1,186 @@
+.teamList {
+    /* width: 100%; */
+    height: fit-content;
+    border-radius: 20px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 33px;
+    padding-bottom: 33px;
+
+    background-color: var(--bg-input);
+
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+}
+
+.contentBox {
+    /* width:100%; */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media only screen and (min-width: 1850px) {
+    .container {
+        gap: 27px;
+    }
+}
+
+
+@media only screen and (max-width: 1279.9px) {
+    .teamList {
+        overflow-y: auto;
+        padding: 24px 30px;
+        padding-left: 50px;
+
+        gap: 18px;
+        max-height: 423px;
+    }
+
+    .contentBox {
+        align-items: flex-start;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+@media only screen and (max-width: 767.9px) {
+    .teamList {
+        background-color: transparent;
+        padding: 0;
+        max-height: 100%;
+        border-radius: 0;
+        gap: 30px;
+    }
+}
+
+
+
+
+
+.teamListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 14px;
+
+}
+
+
+.memberPhoto {
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: antiquewhite;
+
+    margin-right: 10px;
+
+}
+
+.particularMemberPhoto {
+    overflow: hidden;
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 767.9px) {
+    .memberPhoto {
+        display: none;
+    }
+}
+
+.nameBox {
+    margin-right: 13.5px;
+    width: 244px;
+}
+
+.memberName {
+    color: var(--white);
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 767.9px) {
+    .memberName {
+        font-size: 15px;
+    }
+}
+
+.memberEmail {
+    color: var(--text-gray);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media only screen and (max-width: 767.9px) {
+    .memberEmail {
+        font-size: 14px;
+    }
+}
+
+.memberRole {
+    width: 200px;
+    padding: 10px;
+
+    background-color: #4F4F4F;
+
+    color: var(--white);
+
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    cursor: default;
+
+}
+
+@media only screen and (max-width: 767.9px) {
+    .memberRole {
+        font-size: 14px;
+    }
+}
+
+.selectBox {
+    position: relative;
+}
+
+
+.binIcon {
+    display: none;
+
+}
+
+.selectAndBin {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+
+}

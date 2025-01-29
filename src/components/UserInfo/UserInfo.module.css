@@ -1,0 +1,75 @@
+.userInfo {
+  width: 169px;
+  transition: margin-top 0.7s ease-in-out;
+}
+
+.avatar {
+  width: 66px;
+  height: 66px;
+  margin-bottom: 7.5px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 14px;
+  margin-bottom: 11px;
+  font-weight: 400;
+}
+
+.userDetails {
+  color: var(--text-gray);
+  font-size: 16px;
+  margin-bottom: 16.4px;
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+}
+
+.balanceText {
+  color: var(--text-gray);
+  font-size: 14px;
+  margin-right: 17px;
+}
+
+.num {
+  color: var(--white);
+  font-size: 17px;
+  margin-right: 24px;
+  font-weight: 700;
+}
+
+.balanceButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: white;
+  width: 10px;
+  height: 10px;
+}
+
+.hidden {
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  overflow: visible;
+  transition: opacity 1.9s ease;
+  pointer-events: auto;
+}

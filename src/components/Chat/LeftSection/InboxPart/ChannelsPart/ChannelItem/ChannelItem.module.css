@@ -1,0 +1,129 @@
+.channelsListItem {
+  display: flex;
+  justify-content: space-between;
+  height: 46px;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--bg-secondary);
+  padding-left: 30px;
+  padding-right: 10px;
+  width: 264px;
+
+  /* opacity: 1 !important; */
+
+  transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out;
+
+  position: relative;
+}
+
+.channelsListItemActive {
+  background-color: var(--bg-input);
+}
+
+/* .dragged {
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+} */
+
+.iconAndText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dragContainer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.arrowIcon {
+  fill: var(--light-gray);
+}
+
+.channelName {
+  color: var(--light-gray);
+  /* font-family: "Montserrat", sans-serif; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25em;
+}
+
+.channelImg {
+  width: 18px;
+  height: 18px;
+}
+
+.channelImgGmail {
+  height: 12px;
+}
+
+.channelImgFB {
+  width: 16px;
+  height: 16px;
+}
+
+/* .number {
+  
+} */
+
+.dragIcon {
+  color: var(--main-gray);
+}
+
+.numberBox {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid var(--main-gray);
+
+  color: var(--light-gray);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.numberBoxHidden {
+  display: none;
+}
+
+.iconBox {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid var(--main-gray);
+}
+
+.dragIcon {
+  cursor: grab;
+}
+
+.dragIcon:active {
+  cursor: grabbing;
+}
+
+.cloneDragging {
+  opacity: 1 !important;
+  z-index: 1000;
+  border-radius: 12px;
+  /* width: 266px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid white; */
+}
+
+.isDragging {
+  opacity: 0.1;
+  /* cursor: grabbing; */
+}

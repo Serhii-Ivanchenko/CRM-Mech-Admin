@@ -1,0 +1,25 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 460px;
+  height: 70px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: var(--blue);
+  color: var(--white);
+  font-style: normal;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.iconAvto {
+  margin-left: 8px;
+  color: var(--light-gray);
+}

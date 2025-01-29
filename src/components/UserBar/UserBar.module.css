@@ -1,0 +1,63 @@
+.userBarContainer {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 75px;
+  right: 23px;
+  transition: top 0.7s ease, right 0.7s ease;
+}
+
+.chatOpen {
+  top: 54px;
+  right: 0;
+}
+
+.btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.iconSettings {
+  stroke: white;
+  width: 20px;
+  height: 20px;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.btn .tooltipContent::after {
+  content: " ";
+  position: absolute;
+  top: -40%;
+  left: 43%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--main-gray) transparent;
+}
+
+.btn .tooltipContent {
+  font-size: 10px;
+  visibility: hidden;
+  background: var(--main-gray);
+  color: var(--light-gray);
+  text-align: center;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  position: absolute;
+  z-index: 1;
+  left: -294%;
+  top: 130%;
+}
+
+.btn:hover .tooltipContent {
+  visibility: visible;
+}

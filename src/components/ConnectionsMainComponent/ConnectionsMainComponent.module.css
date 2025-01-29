@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.upperWrapper{
+    display: flex;
+    gap: 14px;
+    height: 245px;
+}
+.bottomWrapper {
+    display: flex;
+    gap: 14px;
+}

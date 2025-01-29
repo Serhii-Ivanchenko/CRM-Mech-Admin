@@ -1,0 +1,284 @@
+.loginForm {
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0;
+  padding: 72px 72px;
+  width: 448px;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .loginForm {
+    width: 524px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .loginForm {
+    width: 275px;
+  }
+}
+
+.topSectionWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginHeader {
+  font-size: 32px;
+  font-style: normal;
+  margin-bottom: 12px;
+  font-weight: 700;
+  line-height: 1.1875em;
+}
+
+@media screen and (max-width: 767.98px) {
+  .loginHeader {
+    font-weight: 400;
+  }
+}
+
+.loginText {
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  color: var(--input-text);
+  margin-bottom: 64px;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .loginText {
+    margin-bottom: 14px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .wrapper {
+    gap: 14px;
+  }
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loginLabel {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--white);
+  font-style: normal;
+  line-height: normal;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .loginLabel {
+    font-size: 11px;
+  }
+}
+
+.inputWithIconWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  color: var(--icon-gray);
+  fill: var(--icon-gray);
+  width: 10px;
+  height: 10px;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .inputIcon {
+    left: 20px;
+  }
+}
+
+.input {
+  background-color: var(--bg-input);
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.142em;
+  color: var(--white);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 36px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .input {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 40px;
+  }
+}
+
+.input:-webkit-autofill {
+  background-color: var(--bg-input) !important;
+  color: var(--white) !important;
+  box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: var(--white) !important;
+}
+
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  background-color: var(--bg-input) !important;
+  color: var(--white) !important;
+  box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: var(--white) !important;
+}
+
+.input::placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+.errorMsg {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  color: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.forgotPasswordLink {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  text-align: start;
+  cursor: pointer;
+  color: var(--play-btn-triangle);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.18em;
+  text-decoration-line: underline;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.eyeIconBtn {
+  position: absolute;
+  right: 12px;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .eyeIconBtn {
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .eyeIconBtn {
+    right: 20px;
+  }
+}
+
+.eyeIcon {
+  color: var(--icon-gray);
+  fill: var(--icon-gray);
+  width: 10px;
+  height: 10px;
+}
+
+.submitButton {
+  background-color: var(--play-btn-triangle);
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.1875em;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .submitButton {
+    padding-top: 8px;
+    margin-bottom: 12px;
+  }
+}
+
+.googleWrapper {
+  height: 30px;
+  margin-bottom: 70px;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .googleWrapper {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+}
+
+.bottomTextWrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.linkToRegisterText {
+  color: var(--white);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.18em;
+}
+
+.bottomLink {
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--play-btn-triangle);
+  font-style: normal;
+  line-height: 1.18em;
+  text-decoration: none;
+}
+
+.bottomText {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 18px;
+  color: var(--input-text);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.12em;
+}

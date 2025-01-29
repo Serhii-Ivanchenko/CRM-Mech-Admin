@@ -1,0 +1,32 @@
+.btnContainer {}
+
+.btn {
+    display: flex;
+    width: 147px;
+    height: 26px;
+    /* padding: 3px 10px; */
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 6px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+    border: transparent;
+}
+
+ .icon {
+     display: flex;
+     width: 14px;
+     height: 14px;
+     justify-content: center;
+     align-items: center;
+     border-radius: 3px;
+     color: var(--green);
+     background-color: var(--white);
+     stroke-width: 2px;
+ }

@@ -1,0 +1,486 @@
+.addBox {
+  min-width: 454px;
+  max-width: 800px;
+  /* width: 800px; */
+  /* height: 600px; */
+  padding: 64px;
+
+  border-radius: 10px;
+
+  background-color: var(--bg-secondary);
+
+}
+
+@media only screen and (max-width: 1279.9px) {
+  .addBox {
+    width: 736px;
+  }
+}
+
+@media only screen and (max-width: 767.9px) {
+  .addBox {
+    min-width: 350px;
+    width: 350px;
+    padding: 64px 40.5px 89px;
+    height: fit-content;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+
+  width: 18px;
+  height: 18px;
+  stroke: var(--input-stroke);
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.addTitle {
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.18em;
+
+  align-self: stretch;
+
+  margin-bottom: 65px;
+}
+
+@media only screen and (max-width: 767.9px) {
+  .addTitle {
+    font-size: 16px;
+    margin-bottom: 38px;
+  }
+}
+
+.fieldName {
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.19em;
+  margin-bottom: 8px;
+
+}
+
+@media only screen and (max-width: 767.9px) {
+  .fieldName {
+    font-size: 14px;
+  }
+}
+
+.field {
+  /* min-width: 280px; */
+  /* max-width: 326px; */
+  min-width: 326px;
+  max-height: 55px;
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 10px;
+  border: 1px solid var(--input-stroke);
+
+  background-color: var(--bg-input);
+
+  /* margin-bottom: 24px; */
+
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  outline: none;
+}
+
+@media only screen and (max-width: 1289.9px) {
+  .field {
+    min-width: 294px;
+    /* min-width: 100%; */
+    /* margin-bottom: 0; */
+  }
+}
+
+@media only screen and (max-width: 767.9px) {
+  .field {
+    /* min-width: 294px; */
+    min-width: 100%;
+    /* margin-bottom: 0; */
+  }
+}
+
+.field::placeholder {
+  color: var(--input-text);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.field:-webkit-autofill {
+  background-color: var(--bg-input) !important;
+  color: white !important;
+  box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.field:-webkit-autofill:hover,
+.field:-webkit-autofill:focus {
+  background-color: var(--bg-input) !important;
+  color: white !important;
+  box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.errorMessage {
+  color: var(--red);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+}
+
+@media only screen and (max-width: 767.9px) {
+  .errorMessage {
+    top: 100%;
+  }
+}
+
+.nameBox {
+  width: inherit;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 767.9px) {
+  .nameBox {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.fieldEmail {
+  width: 100%;
+  max-height: 55px;
+  padding: 18px 20px;
+
+  border-radius: 10px;
+  border: 1px solid var(--input-stroke);
+
+  background-color: var(--bg-input);
+  margin-bottom: 48px;
+
+
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  outline: none;
+}
+
+
+
+.fieldEmail::placeholder {
+  color: var(--input-text);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.fieldEmail:-webkit-autofill {
+  background-color: var(--bg-input) !important;
+  color: white !important;
+  box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.fieldEmail:-webkit-autofill:hover,
+.fieldEmail:-webkit-autofill:focus {
+  background-color: var(--bg-input) !important;
+  color: white !important;
+  box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.errorMessageEmail {
+  color: var(--red);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  position: absolute;
+  top: 66%;
+  left: 10px;
+}
+
+.nameEmail {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  margin-top: 24px;
+}
+
+
+
+
+.btnBox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+
+  margin-top: 40px;
+
+}
+
+@media only screen and (max-width: 767.9px) {
+  .btnBox {
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 23px;
+  }
+}
+
+.cancelBtn {
+  height: 51px;
+  padding: 16px 48px;
+  color: var(--white);
+
+  border-radius: 6px;
+  border: 1px solid var(--input-stroke);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.19em;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+@media (max-width: 767.9px) {
+  .cancelBtn {
+    height: 48px;
+    font-size: 14px;
+    line-height: 1.14em;
+  }
+}
+
+.addBtn {
+  height: 51px;
+  cursor: pointer;
+
+  padding: 16px 48px;
+
+  border-radius: 6px;
+  background-color: var(--blue);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--white);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.19em;
+
+  border: none;
+}
+
+.addBtn:hover {
+  background-color: var(--blue-btn-hover);
+}
+
+.addBtn:active {
+  background-color: var(--blue-btn-inactive);
+}
+
+@media (max-width: 767.9px) {
+  .addBtn {
+    height: 50px;
+    font-size: 14px;
+    line-height: 1.14em;
+  }
+}
+
+.addIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Radio-button */
+
+.radioName {
+  display: flex;
+}
+
+.radioInput {
+  display: none;
+}
+
+.castomRadio {
+  min-width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  border: solid 1px var(--black);
+  margin-right: 15px;
+  padding: 4px;
+
+}
+
+.dot {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--black);
+}
+
+/* .castomRadio::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: var(--black);
+
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+} */
+
+.radioInput:checked+.castomRadio {
+  min-width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: solid 1px var(--blue);
+
+
+}
+
+.radioInput:checked+.castomRadio .dot {
+  background-color: var(--blue);
+}
+
+.radioBtnBox {
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.roleDescription {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+
+
+.title {
+  color: var(--white);
+  padding-top: 4px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.19em;
+}
+
+@media only screen and (max-width: 767.9px) {
+  .title {
+    font-size: 14px;
+  }
+}
+
+.text {
+  color: var(--white);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  width: 100%
+}
+
+@media only screen and (max-width: 767.9px) {
+  .text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .responsiveBr {
+    display: none;
+  }
+}
+
+.responsiveBr2 {
+  display: none;
+}
+
+@media (max-width: 767.9px) {
+  .responsiveBr2 {
+    display: inline;
+  }
+}

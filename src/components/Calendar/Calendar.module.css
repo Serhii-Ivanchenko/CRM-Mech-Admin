@@ -1,0 +1,66 @@
+.containercalendar {
+    margin-top: 20px;
+    width: 420px;
+    min-height: 188px;
+    height: auto;
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 24px;
+    margin-bottom: 3px;
+    margin-left: 0;
+    grid-column-gap: 7px;
+    text-align: center;
+
+    color: var(--white);
+    justify-content: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.weekdaysday {
+    grid-column-gap: 6px;
+    text-align: center;
+    margin-bottom: 3px;
+    color: var(--white);
+    justify-content: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.calendargrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 7.4px;
+    grid-row-gap: 6px;
+}
+
+.calendar-day {
+    text-align: center;
+    color: var(--white);
+    width: 54px;
+    height: 27px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    border: none;
+}
+
+.other-month {
+    background-color: #f0f0f0;
+    color: #999;
+}

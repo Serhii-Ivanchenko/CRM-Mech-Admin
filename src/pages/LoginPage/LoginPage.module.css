@@ -1,0 +1,34 @@
+.loginPageWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+
+.loginPage {
+  display: flex;
+  overflow: hidden;
+  border-radius: 60px;
+  width: 896px;
+  height: 678px;
+}
+
+@media screen and (max-width: 1279.98px) {
+  .loginPage {
+    width: 767px;
+    padding-left: 121px;
+    padding-right: 121px;
+    border-radius: 0;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .loginPage {
+    width: 375px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

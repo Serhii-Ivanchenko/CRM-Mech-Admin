@@ -1,0 +1,29 @@
+.statusFilter {
+    display: flex;
+    position: relative;
+    height: 100%;
+  }
+
+  .filterButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    border-radius: 12px;
+    background: var(--bg-input);
+  }
+  
+  .statusFilterText {
+    color: var(--icon-gray);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+    text-transform: uppercase;
+  }

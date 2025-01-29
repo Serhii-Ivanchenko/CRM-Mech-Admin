@@ -1,0 +1,166 @@
+.navigation {
+  margin-left: 5px;
+}
+
+.navigationChatOpen {
+  margin-left: 0;
+}
+
+.navItem {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  font-variant: small-caps;
+  transition: padding 0.7s ease;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 10px;
+  transition: color 0.3s, background-color 0.3s, width 0.7s ease,
+    box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.navWithChat {
+  width: 42px;
+  border-radius: 50%;
+}
+
+.navWithChat:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px, rgba(0, 0, 0, 0.3) 0px 5px 3px;
+  transform: scale(1.07);
+}
+
+.navLink:hover .iconContainer {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px, rgba(0, 0, 0, 0.3) 0px 5px 3px;
+  transform: scale(1.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.topNavContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.iconContainer {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--main-gray);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.iconVideo,
+.iconCrm,
+.iconAvto,
+.iconSettinds,
+.iconHome,
+.iconBook,
+.iconPayment {
+  transition: color 0.3s;
+  color: white;
+}
+
+.iconPayment {
+  width: 28px;
+  height: 28px;
+}
+
+.iconVideo,
+.iconCrm,
+.iconHome {
+  width: 19px;
+  height: 19px;
+}
+
+.iconAvto,
+.iconSettings,
+.iconBook {
+  width: 18px;
+  height: 18px;
+}
+
+.navLink.active .iconContainer,
+.iconContainerActive {
+  background-color: var(--light-gray);
+}
+
+.navLink.active .iconVideo,
+.navLink.active .iconAvto,
+.navLink.active .iconSettings,
+.navLink.active .iconCrm,
+.navLink.active .iconHome,
+.navLink.active .iconBook,
+.navLink.active .iconPayment,
+.iconActive {
+  color: var(--bg-secondary);
+}
+
+.disabled {
+  pointer-events: none;
+  color: var(--input-text);
+}
+
+.navArrow {
+  font-size: 13px;
+  vertical-align: middle;
+  transition: all 0.7s ease;
+}
+
+.smallArrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+}
+
+.repostClientsContainer {
+  min-width: 100px;
+  margin-top: 15px;
+  margin-bottom: 6px;
+}
+
+.activeLink {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.clientActive {
+  background: var(--bg-input);
+  height: 24px;
+  line-height: 1.5;
+}
+
+.hidden {
+  opacity: 0;
+  max-width: 0;
+  overflow: hidden;
+}
+
+/* Стилі для тексту, який поступово розгортається */
+.linkText {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 130px;
+  opacity: 1;
+  transition: opacity 0.7s ease, width 0.7s ease;
+}
+
+.linkText.hidden {
+  opacity: 0;
+  width: 0px;
+  transition: opacity 0.7s ease, width 0.7s ease-in-out;
+}

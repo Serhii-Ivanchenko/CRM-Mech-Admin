@@ -1,0 +1,274 @@
+
+
+
+.react-tel-input .flag-dropdown.open .selected-flag {
+    background-color: transparent !important;
+}
+
+.react-tel-input .selected-flag {
+    background-color: transparent !important;
+    width: 100% !important;
+    padding: 0 !important;
+
+}
+
+.react-tel-input .selected-flag:hover {
+    background-color: transparent !important;
+}
+
+
+.react-tel-input .selected-flag .flag{
+    right: 55%;
+}
+
+
+.react-tel-input .country-list .country.highlight{
+    background-color: var(--bg-secondary) !important;
+}
+
+.react-tel-input .country-list .country:hover {
+    background-color: var(--bg-secondary) !important;
+}
+
+.react-tel-input .country-list{
+    top:100%;
+    left: 0;
+
+    border-radius: 12px !important;
+}
+
+.react-tel-input .country-list::-webkit-scrollbar{
+width: 8px;
+overflow: hidden;
+/* border-radius: 4px; */
+}
+
+.react-tel-input .country-list::-webkit-scrollbar-track {
+    background-color: var(--bg-secondary);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    
+}
+
+.react-tel-input .country-list::-webkit-scrollbar-thumb {
+background-color: var(--main-gray);
+border-radius: 4px;
+}
+
+.react-tel-input .selected-flag .arrow{
+    display: none !important;
+}
+
+/* .react-tel-input .flag-dropdown{
+    position: relative;
+} */
+
+.arrowPhone{
+    position: absolute !important;
+    top:60% !important;
+    /* transform: translateY(-50%); */
+    left: 50px !important;
+    z-index: 10 !important;
+    fill: var(--icon-gray) !important;
+    pointer-events: none;
+
+}
+
+.arrowPhone.rotated {
+    transform: rotate(180deg);
+}
+
+
+
+/* .react-tel-input .flag-dropdown.open{
+    z-index: 0 !important;
+} */
+
+
+/* .phoneInputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.codeButton {
+    width: 129px;
+    background-color: var(--input-stroke);
+    padding: 18px 20px;
+    cursor: pointer;
+    border-radius: 10px 0px 0px 10px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    color: var(--Icon-Gray, var(--icon-gray));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.phoneInput {
+    border-radius: 0px 10px 10px 0px;
+    border: 1px solid var(--input-stroke);
+    padding: 18px 20px;
+    flex: 1;
+    background-color: #282828;
+    outline: none;
+
+    color: var(--Button-grey, var(--input-stroke));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.phoneInput::placeholder {
+    color: var(--Button-grey, var(--input-stroke));
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #282828;
+    border: 1px solid var(--input-stroke);
+    border-radius: 10px;
+    z-index: 10;
+    width: 100%;
+
+}
+
+.countryOption {
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+
+    &:hover {
+        background-color: var(--input-stroke);
+        border-radius: 10px;
+    }
+}
+
+.btnArrowSelect {
+    width: 20px;
+    height: 20px;
+    fill: var(--icon-gray);
+    pointer-events: none;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: cover;
+display: flex;
+flex-shrink: 0;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+/* .button {
+    display: flex;
+    align-items: center;
+    background-color: #282828;
+    border: 1px solid var(--input-stroke);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+    padding: 0 10px;
+}
+
+.button:hover{
+    color: #282828;
+} */
+
+/* .input {
+    background-color: #282828;
+    color: var(--white);
+    border: 1px solid var(--input-stroke);
+    border-left: none;
+    border-radius: 0 10px 10px 0;
+} */
+
+/* .customButton {
+    display: flex;
+    align-items: center;
+} 
+
+.dialCode {
+    margin-left: 8px;
+    color: var(--white); } */
+
+
+
+
+
+/* .container{
+       width: 420px;
+        padding: 18px 20px;
+    
+        border-radius: 10px;
+        border: 1px solid var(--Button-grey, var(--input-stroke));
+        background-color: transparent;
+        outline: none;
+    
+        margin-bottom: 12px;
+        margin-top: 8px;
+    
+        color: var(--White, var(--Color, var(--white)));
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+} */
+
+/* .input{
+        background-color: #282828;
+        padding: 18px 20px;
+}
+
+.btn{
+    background-color: #282828;
+    border: 1px solid var(--input-stroke);
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+
+    appearance: none;
+}
+
+.btn .selected-flag {
+    display: flex;
+    align-items: center;
+}
+
+/* Додаємо код країни поруч з прапором 
+.react-tel-input .selected-flag .iti-flag {
+    margin-right: 8px;
+}
+
+.react-tel-input .selected-flag:after {
+    content: attr(data-dial-code);
+    margin-left: 8px;
+    font-size: 14px;
+    color: var(--white); 
+} */

@@ -1,0 +1,65 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  padding: 20px 30px 20px 25px;
+  width: 230px;
+  height: clamp(804px, calc(804px + (163 * ((100vh - 900px) / 180))), 967px);
+
+  flex-shrink: 0;
+  transition: width 0.7s ease-in, padding 0.7s ease-in, gap 0.7s ease-in;
+}
+
+.chatOpen {
+  width: 111px;
+  padding: 20px;
+  transition: width 0.7s ease-in, padding 0.7s ease-in, gap 0.7s ease-in;
+}
+
+.userInfo {
+  position: relative;
+}
+
+.userBar {
+  position: absolute;
+}
+
+.bottomContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+  gap: 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 200px);
+  transition: width 0.7s ease;
+  width: auto;
+}
+
+.bottomContainerWithChat {
+  width: 71px;
+
+  padding-left: 14.5px;
+  transition: width 0.7s ease;
+}
+
+.bottomContainer.withScroll {
+  overflow-y: auto;
+}
+
+.bottomContainer::-webkit-scrollbar {
+  width: 0px;
+}
+
+.topContainer {
+  flex-shrink: 0;
+  position: relative;
+  margin-left: 5px;
+}
+
+.topContainerChatOpen {
+  margin-left: 0px;
+}

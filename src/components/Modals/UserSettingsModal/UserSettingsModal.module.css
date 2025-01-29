@@ -1,0 +1,190 @@
+.settingsBox {
+    width: 1226px;
+    /* max-width: 1450px; */
+    height: 850px;
+    border-radius: 10px;
+    background: var(--bg-secondary);
+    display: flex;
+}
+
+@media only screen and (min-width: 1850px) {
+    .settingsBox {
+        width: 1357px;
+        /* max-width: 1450px; */
+    }
+}
+
+@media only screen and (max-width: 1279.9px) {
+    .settingsBox {
+        width: 736px;
+    }
+}
+
+@media only screen and (max-width: 767.9px) {
+    .settingsBox {
+        width: 353px;
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    cursor: pointer;
+
+    width: 14px;
+    height: 14px;
+    stroke: var(--input-stroke);
+}
+
+
+
+
+
+
+
+
+/* .formBox{
+    display: flex;
+    flex-direction: column;
+    width: 338px;
+    height: 600px;
+    background-color: var(--bg-secondary);
+    border-radius: 5px;
+    padding: 20px;
+    gap: 10px;
+}
+
+.photoBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.photo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photoField{
+    display: none;
+}
+
+.input{
+    height: 33px;
+    background-color: var(--bg-input);
+    outline: none;
+    border: none;
+
+    color: white;
+    
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.input::placeholder{
+    color: var(--icon-gray);
+   
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.input:-webkit-autofill{
+    background-color: var(--bg-input) !important;
+    color: white !important;
+    box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+    background-color: var(--bg-input) !important;
+    color: white !important;
+    box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+    -webkit-text-fill-color: white !important;
+}
+
+.errorMessage{
+    color: red;
+    font-size: 10px;
+}
+
+.planBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.currentPlan{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: solid 1px white;
+    border-radius: 5px;
+}
+
+.PremiumPlan{
+    width: 150px;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+
+}
+
+.btnBox{
+    display: flex;
+    gap: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.btnSave{
+    width: 100px;
+    height: 35px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+
+    color: var(--white);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.btnCancel{
+    width: 100px;
+    background-color: var(--blue);
+    border: none;
+    border-radius: 5px;
+
+    color: var(--white);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+} */

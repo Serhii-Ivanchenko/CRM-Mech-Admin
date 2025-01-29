@@ -1,0 +1,448 @@
+.clientInfoBox {
+  width: 567px;
+  padding-right: 40px;
+}
+
+.title {
+  color: var(--white);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-bottom: 52px;
+}
+
+.clientImg {
+  width: 126px;
+  height: 126px;
+
+  border-radius: 8px;
+
+  /* border: solid 1px #fff; */
+}
+
+.infoBox {
+  display: flex;
+
+  margin-bottom: 34px;
+}
+
+.rating {
+  gap: 2px;
+}
+
+.photoAndMainInfo {
+  display: flex;
+  align-items: flex-end;
+  gap: 23px;
+
+  /* margin-right: 29px; */
+}
+
+.mainInfo {
+  width: 376px;
+}
+
+.serviceBook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  gap: 19px;
+
+  border-radius: 6px;
+  background-color: var(--download-pdf-btn-bg);
+
+  /* margin-top: 26px; */
+  width: fit-content;
+  height: 44px;
+}
+
+.sbText {
+  color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.sbBtn {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 4px 6px;
+
+  border-radius: 6px;
+  background: var(--bg-input);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  color: var(--icon-gray);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.downloadIcon {
+  fill: var(--icon-gray);
+  width: 16px;
+  height: 16px;
+}
+
+.dateOfBirth {
+  color: var(--text-gray);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin-top: 3px;
+}
+
+.clientName {
+  color: var(--white);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.1875em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 376px;
+}
+
+.moneyBox {
+  display: flex;
+  align-items: flex-start;
+  /* height: 82px; */
+  gap: 9px;
+}
+
+.dollarIcon {
+  fill: var(--green-btn-normal);
+  width: 20px;
+  height: 20px;
+}
+
+.moneyAmount {
+  color: var(--white);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.contactsBox {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+
+  padding-bottom: 38px;
+  margin-bottom: 38px;
+
+  border-bottom: dashed 2px var(--contacts-info-bg);
+}
+
+/* .contactsList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contactsListItem{
+    display: flex;
+} */
+
+.categoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactsInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.categoryListItem {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contactsInfoItem {
+  height: 46px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  background-color: var(--contacts-info-bg);
+  gap: 28px;
+  width: fit-content;
+}
+
+/* .contactsInputPhone {
+  width: 169px;
+}*/
+
+.contactsInput {
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  color: var(--white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.contactsInputActive {
+  width: 235px;
+}
+
+.contactsInfoItemTg {
+  width: 278px;
+}
+
+.contactsInputEmail {
+  width: 235px;
+}
+
+.contactsInputText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 235px;
+}
+
+.contactsBtn {
+  border: none;
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+  background: var(--bg-input);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+}
+
+.phoneCallIcon {
+  fill: var(--green-btn-normal);
+  width: 18px;
+  height: 18px;
+}
+
+.clock {
+  fill: var(--red);
+}
+
+.iconColor {
+  fill: var(--icon-gray);
+}
+
+/* .atIcon{
+    fill: var(--icon-gray);
+    width: 25px;
+    height: 25px;
+} */
+
+/* .copyIcon{
+    fill: var(--icon-gray);
+    width: 18px;
+    height: 18px;
+}
+
+.planeIcon{
+    fill: var(--icon-gray);
+    width: 22px;
+    height: 23px;
+} */
+.contactsBtn:active .phoneCallIcon {
+  fill: #28232a;
+}
+
+.contactsBtn:active .iconColor {
+  fill: #28232a;
+}
+
+.contactsBtnBox {
+  display: flex;
+  gap: 10px;
+}
+
+.category {
+  color: var(--white);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.categoryIcon {
+  fill: var(--icon-gray);
+  width: 18px;
+  height: 18px;
+}
+
+.nameAndEditBox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 3px;
+}
+
+.editBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+
+  border-radius: 6px;
+  background: var(--bg-input);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+}
+
+.btnSave {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+
+  border-radius: 6px;
+  background: var(--green-btn-normal);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+}
+
+.pencilIcon {
+  fill: var(--light-gray);
+}
+
+.addBtn {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.plusIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: var(--white);
+  background-color: var(--green-btn-normal);
+  stroke-width: 3px;
+  cursor: pointer;
+  /* width: 30px;
+  height: 30px; */
+}
+
+.addBtn:hover .plusIcon {
+  background-color: var(--green-btn-hover);
+}
+
+.ratingAndMoney {
+  display: flex;
+  justify-content: space-between;
+}
+
+.legalInfo {
+  display: flex;
+  padding: 10px 16px;
+  align-items: center;
+  gap: 19px;
+  width: fit-content;
+
+  height: 48px;
+
+  border-radius: 6px;
+  background: var(--download-pdf-btn-bg);
+
+  margin-top: 26px;
+}
+
+.lIText {
+  color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.carInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 258px;
+  overflow-y: auto;
+  width: 567px;
+  /* position: relative; */
+}
+
+.carInfo::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+  margin-left: 20px;
+}
+
+.carInfo::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--player-secondary-bg);
+}
+
+.carInfo::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #202020;
+}
+
+.carListAndAddBtn {
+  position: relative;
+}
+
+.addCarBtn {
+  border: none;
+  display: flex;
+  gap: 6px;
+  padding: 4px 6px;
+  align-items: center;
+  height: fit-content;
+
+  border-radius: 6px;
+  background-color: var(--green-btn-normal);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.addCarBtn:hover {
+  background-color: var(--green-btn-hover);
+}
+
+.plus {
+  width: 18px;
+  height: 18px;
+  fill: var(--white);
+}
+.carIcon {
+  fill: var(--icon-gray);
+}

@@ -1,0 +1,46 @@
+@media only screen and (max-width: 1279.98px) {
+  .welcomeSection {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .welcomeSection {
+    background-image: url(../../assets/images/Car_1x.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 448px;
+    height: 678px;
+    padding-bottom: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+@media only screen and (min-resolution: 192dpi) {
+  .welcomeSection {
+    background-image: url(../../assets/images/Car_2x.webp);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .welcomeHeader {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--white);
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .welcomeText {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: var(--white);
+  }
+}
