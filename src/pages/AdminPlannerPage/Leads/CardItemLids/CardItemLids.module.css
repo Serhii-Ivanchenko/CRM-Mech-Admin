@@ -1,0 +1,160 @@
+.recordContainer {
+  width: 294px;
+  height: auto;
+  padding: 10px 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  background: var(--bg-input);
+  cursor: grab;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  position: relative;
+}
+
+.recordContainer.dragging {
+  opacity: 0.1;
+  cursor: grabbing;
+}
+
+/* .crmBlockDayCarsItemContainer.cursorComplete{
+    cursor: default;
+  }
+   */
+.cloneDragging {
+  opacity: 1;
+  box-shadow: 11px 21px 14px 0px rgba(0, 0, 0, 0.25);
+  cursor: grabbing;
+  transform: scale(1.05);
+  background-color: var(--bg-input);
+  z-index: 1000;
+  transition: transform 0.5s ease-out;
+}
+
+.userContainer {
+  display: flex;
+  gap: 9px;
+  margin-bottom: 10px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userPhoto {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+
+.clientImg {
+  border-radius: 50%;
+}
+
+.textName,
+.postCount {
+  color: var(--light-gray);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.textTel {
+  color: var(--light-gray);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.eventContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 6px;
+}
+
+.eventInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date {
+  color: var(--light-gray);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.event {
+  color: var(--current-mileage-text);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.time {
+  color: var(--light-gray);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.master,
+.companyInfo {
+  display: flex;
+  gap: 15px;
+}
+
+.masterName,
+.companyName {
+  color: var(--light-gray);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.line {
+  height: 1px;
+  background: rgba(216, 225, 255, 0.5);
+  width: 100%;
+}
+
+.firstContainer,
+.locationsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+}
+.firstContainer {
+  padding-left: 0;
+}
+.city {
+  color: var(--light-gray);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.settingsContainer {
+  display: flex;
+}
+
+.btnContainer {
+  display: flex;
+  margin-left: auto;
+  gap: 12px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
