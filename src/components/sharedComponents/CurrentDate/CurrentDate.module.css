@@ -1,0 +1,8 @@
+.dateContaiter {
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: normal;
+}

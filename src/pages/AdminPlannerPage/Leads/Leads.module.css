@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+    height: 776px;
+}
+
+.headersContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 23px;
+    gap: 10px;
+}
+
+.columnsContainer {
+    display: flex;
+    max-height: 753px;
+    overflow-y: auto;
+}
+
+.columnsInnerContainer {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.columnsContainer::-webkit-scrollbar {
+    width: 8px;
+}
+
+.columnsContainer::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+    border-radius: 4px;
+}
+
+.columnsContainer::-webkit-scrollbar-thumb {
+    background: var(--main-gray);
+    border-radius: 4px;
+}
+
+.headerColumn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 294px;
+}
+
+.statusHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    width: 294px;
+    height: 61px;
+    padding: 20px 10px 20px 20px;
+    font-size: 18px;
+    font-weight: 600;
+
+    color: white;
+    background-size: cover;
+    background: var(--bg-secondary);
+}
+
+.carCount {
+    margin-left: auto;
+    font-size: 16px;
+    color: var(--white);
+}

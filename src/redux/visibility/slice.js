@@ -21,8 +21,8 @@ const visibilitySlice = createSlice({
       time: true,
       name: true,
       status: true,
-      reasonRegistration : true,
-      reasonArchived : true,
+      reasonRegistration: true,
+      reasonArchived: true,
     },
     visibilityCar: {
       prePayment: true,
@@ -36,7 +36,6 @@ const visibilitySlice = createSlice({
       photo: true,
       totalPrice: true,
       phoneNumber: true,
-      
     },
     visibilityCarRecomendations: {
       name: true,
@@ -103,6 +102,11 @@ const visibilitySlice = createSlice({
       profit: true,
       percent: true,
     },
+    // для проекту CRM-Mech-Admin
+    visibilityLids: {
+      phone: true,
+      position: true,
+    },
   },
   reducers: {
     toggleVisibilityInvoices: (state, action) => {
@@ -135,7 +139,14 @@ const visibilitySlice = createSlice({
     },
     toggleVisibilityRecomendations: (state, action) => {
       const { key } = action.payload;
-      state.visibilityCarRecomendations[key] = !state.visibilityCarRecomendations[key];
+      state.visibilityCarRecomendations[key] =
+        !state.visibilityCarRecomendations[key];
+    },
+
+    // для проекту CRM-Mech-Admin
+    toggleVisibilityLids: (state, action) => {
+      const { key } = action.payload;
+      state.visibilityLids[key] = !state.visibilityLids[key];
     },
   },
 });
@@ -148,7 +159,9 @@ export const {
   toggleVisibilityClientsInWork,
   toggleVisibilityAllClients,
   toggleVisibilityArchive,
-  toggleVisibilityRecomendations
+  toggleVisibilityRecomendations,
+
+  toggleVisibilityLids,
 } = visibilitySlice.actions;
 
 export default visibilitySlice.reducer;
