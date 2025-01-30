@@ -18,7 +18,7 @@ import firstPage from "../../utils/firstPage.js";
 import css from "./App.module.css";
 import Header from "../Header/Header.jsx";
 import SideBar from "../SideBar/SideBar.jsx";
-import AdminPlannerPage from "../../pages/AdminPlannerPage/AdminPlannerPage.jsx";
+
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage.jsx"));
@@ -29,7 +29,19 @@ const MainPage = lazy(() => import("../../pages/MainPage/MainPage.jsx"));
 // const VideoControlPage = lazy(() =>
 //   import("../../pages/VideoControlPage/VideoControlPage.jsx")
 // );
-const CRMPage = lazy(() => import("../../pages/CRMPage/CRMPage.jsx"));
+// const CRMPage = lazy(() => import("../../pages/CRMPage/CRMPage.jsx"));
+const AdminPlannerPage = lazy(() =>
+  import("../../pages/AdminPlannerPage/AdminPlannerPage.jsx")
+);
+const AdminCalendar = lazy(() =>
+  import("../../pages/AdminPlannerPage/AdminCalendar/AdminCalendar.jsx")
+);
+const Leads = lazy(() =>
+  import("../../pages/AdminPlannerPage/Leads/Leads.jsx")
+);
+const Clients = lazy(() =>
+  import("../../pages/AdminPlannerPage/Clients/Clients.jsx")
+);
 const ConnectionsPage = lazy(() =>
   import("../../pages/ConnectionsPage/ConnectionsPage.jsx")
 );
@@ -186,9 +198,9 @@ export default function App() {
                       />
                     }
                   >
-                    {/* <Route path="calendar" element={<AdminCalendar />} /> */}
-                    {/* <Route path="leads" element={<Leads />} /> */}
-                    {/* <Route path="clients" element={<Clients />} /> */}
+                    <Route path="calendar" element={<AdminCalendar />} />
+                    <Route path="leads" element={<Leads />} />
+                    <Route path="clients" element={<Clients />} />
                   </Route>
 
                   <Route
