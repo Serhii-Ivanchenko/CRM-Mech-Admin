@@ -58,14 +58,14 @@
   color: var(--light-gray);
   font-size: 19px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.2105em;
 }
 
 .textTel {
   color: var(--light-gray);
   font-size: 16px;
   font-weight: 300;
-  line-height: normal;
+  line-height: 1.1875em;
 }
 
 .eventContainer {
@@ -86,15 +86,14 @@
   color: var(--light-gray);
   font-size: 16px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.1875em;
 }
 
 .event {
   color: var(--current-mileage-text);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: normal;
-}
+  line-height: 1.1875em;}
 
 .time {
   color: var(--light-gray);
@@ -114,7 +113,7 @@
   color: var(--light-gray);
   font-size: 16px;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.1875em;
 }
 
 .line {

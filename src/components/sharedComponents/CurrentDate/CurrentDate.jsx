@@ -6,10 +6,10 @@ const CurrentDate = () => {
   const date = new Date();
   let formattedDate = format(date, "LLLL, yyyy", { locale: uk });
 
-  formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
+  formattedDate =
+    formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1);
 
-  return <span className={styles.dateContaiter}>{formattedDate}</span>;
+  return <div className={styles.dateContaiter}>{formattedDate}</div>;
 };
-
 
 export default CurrentDate;
