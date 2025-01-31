@@ -103,7 +103,7 @@ const visibilitySlice = createSlice({
       percent: true,
     },
     // для проекту CRM-Mech-Admin
-    visibilityLids: {
+    visibilityLeads: {
       phone: true,
       position: true,
     },
@@ -144,9 +144,9 @@ const visibilitySlice = createSlice({
     },
 
     // для проекту CRM-Mech-Admin
-    toggleVisibilityLids: (state, action) => {
+    toggleVisibilityLeads: (state, action) => {
       const { key } = action.payload;
-      state.visibilityLids[key] = !state.visibilityLids[key];
+      state.visibilityLeads[key] = !state.visibilityLeads[key];
     },
   },
 });
@@ -161,7 +161,7 @@ export const {
   toggleVisibilityArchive,
   toggleVisibilityRecomendations,
 
-  toggleVisibilityLids,
+  toggleVisibilityLeads,
 } = visibilitySlice.actions;
 
 export default visibilitySlice.reducer;

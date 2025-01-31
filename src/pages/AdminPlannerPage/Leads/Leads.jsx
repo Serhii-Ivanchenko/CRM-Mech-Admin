@@ -1,9 +1,9 @@
 import css from "./Leads.module.css";
-import DayCarsListCrm from "./CardListLids/CardListLids.jsx";
 import Column from "../../../components/Column/Column";
 import { useState } from "react";
-import { cardsLids, statusLidsMapping } from "../../../utils/CrmAdminUtils/dataToCrmAdmin";
+import { cardsLeads, statusLeadsMapping } from "../../../utils/CrmAdminUtils/dataToCrmAdmin";
 import clsx from "clsx";
+import CardListLeads from "./CardListLeads/CardListLeads";
 
 // Масив кольорів для рамки
 const svgData = [
@@ -15,7 +15,7 @@ const svgData = [
 ];
 
 export default function Leads() {
-  const [cards, setCards] = useState(cardsLids);
+  const [cards, setCards] = useState(cardsLeads);
 
   const handleDragStart = (e, id) => {
     e.dataTransfer.setData("text/plain", id);
@@ -43,7 +43,7 @@ export default function Leads() {
   return (
     <div className={css.container}>
       <div className={css.headersContainer}>
-      {Object.entries(statusLidsMapping).map(([status, label], index) => {
+      {Object.entries(statusLeadsMapping).map(([status, label], index) => {
   const filteredRecords = getItemsForStatus(status);
   const recordCount = filteredRecords.length;
   const borderColor = svgData[index] ? svgData[index].fill : "transparent";
@@ -69,7 +69,7 @@ export default function Leads() {
 
       <div className={css.columnsContainer}>
         <div className={css.columnsInnerContainer}>
-          {Object.entries(statusLidsMapping).map(([status, label]) => {
+          {Object.entries(statusLeadsMapping).map(([status, label]) => {
             const filteredRecords = getItemsForStatus(status);
             return (
               <Column
@@ -79,7 +79,7 @@ export default function Leads() {
                 onDragOver={handleDragOver}
                 onDrop={(e) => handleDrop(e, status)}
               >
-                <DayCarsListCrm
+                <CardListLeads
                   records={filteredRecords}
                   onDragStart={handleDragStart}
                 />
