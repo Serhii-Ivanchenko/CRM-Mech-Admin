@@ -1,8 +1,91 @@
 .wrapper {
-    display: flex;
-    width: 475px;
-    height: 897px;
-    justify-content: space-between;
-    border: 1px solid var(--light-gray);
-    border-radius: 12px;
+  display: flex;
+  width: 475px;
+  height: 897px;
+  justify-content: space-between;
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+}
+
+.cardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.darkCard {
+  display: flex;
+  width: 234px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  border-radius: 12px;
+  background: var(--bg-input);
+}
+
+.topPart {
+  width: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  color: var(--light-gray);
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-variant: small-caps;
+}
+
+.statisticalData {
+  display: flex;
+  padding: 2px 6px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  border-radius: 6px;
+  background: var(--green-btn-normal);
+}
+
+.amountOfMoney {
+  color: var(--white);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.bottomPart {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.numberOfPeople {
+  color: var(--light-gray);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  /* line-height: normal; */
+}
+
+.icon {
+  fill: var(--light-gray);
+}
+
+.amountBottom {
+  color: var(--green-btn-normal);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  /* line-height: normal; */
 }
