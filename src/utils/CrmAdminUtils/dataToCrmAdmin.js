@@ -5,6 +5,16 @@ export const labelNamesLeads = {
   phone: "Телефон",
 };
 
+// Лейбл для сторінки dashBoard - налаштування видимості
+
+export const labelNamesDashBoard = {
+  sales: "Продажи",
+  costs: "Витрати",
+  profit: "Прибуток",
+  leads: "Ліди",
+  newСlients: "Нові клієнти",
+};
+
 export const statusLeadsMapping ={
   new: "Новий",
   contact: "Контакт",

@@ -107,6 +107,13 @@ const visibilitySlice = createSlice({
       phone: true,
       position: true,
     },
+    visibilityDashBoard: {
+      sales: true,
+      costs: true,
+      profit: true,
+      leads: true,
+      newСlients: true,
+    },
   },
   reducers: {
     toggleVisibilityInvoices: (state, action) => {
@@ -148,6 +155,10 @@ const visibilitySlice = createSlice({
       const { key } = action.payload;
       state.visibilityLeads[key] = !state.visibilityLeads[key];
     },
+    toggleVisibilityDashBoard: (state, action) => {
+      const { key } = action.payload;
+      state.visibilityDashBoard[key] = !state.visibilityDashBoard[key];
+    },
   },
 });
 
@@ -162,6 +173,7 @@ export const {
   toggleVisibilityRecomendations,
 
   toggleVisibilityLeads,
+  toggleVisibilityDashBoard,
 } = visibilitySlice.actions;
 
 export default visibilitySlice.reducer;
