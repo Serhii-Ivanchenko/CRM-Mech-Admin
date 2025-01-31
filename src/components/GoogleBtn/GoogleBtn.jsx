@@ -41,6 +41,7 @@ export default function GoogleBtn() {
           });
       }
     } catch (error) {
+      console.log('error', error)
       toast.error("Щось пішло не так! Будь ласка, спробуйте ще раз!");
     }
   };
