@@ -4,9 +4,9 @@ import CurrentDate from "../../sharedComponents/CurrentDate/CurrentDate";
 import RangeTimeSelector from "../../sharedComponents/RangeTimeSelector/RangeTimeSelector";
 import css from "./AdminPlannerControlBar.module.css";
 import InfoSettingsVisibility from "../../sharedComponents/InfoSettingsVisibility/InfoSettingsVisibility";
-import { toggleVisibilityLids } from "../../../redux/visibility/slice";
-import { selectVisibilityLids } from "../../../redux/visibility/selectors";
-import { labelNamesLids } from "../../../utils/CrmAdminUtils/dataToCrmAdmin";
+import { toggleVisibilityLeads } from "../../../redux/visibility/slice";
+import { selectVisibilityLeads } from "../../../redux/visibility/selectors";
+import { labelNamesLeads } from "../../../utils/CrmAdminUtils/dataToCrmAdmin";
 
 export default function AdminPlannerControlBar() {
     const [periodStartData, setPeriodStartData] = useState(new Date());
@@ -24,9 +24,9 @@ export default function AdminPlannerControlBar() {
     </div>
     <div className={css.rightContainer}>
     <InfoSettingsVisibility
-          selectVisibility={selectVisibilityLids}
-          toggleVisibilityAction={toggleVisibilityLids}
-          labelNames={labelNamesLids}
+          selectVisibility={selectVisibilityLeads}
+          toggleVisibilityAction={toggleVisibilityLeads}
+          labelNames={labelNamesLeads}
           // className={css.settingsContainerInCrm}
         />
     </div>

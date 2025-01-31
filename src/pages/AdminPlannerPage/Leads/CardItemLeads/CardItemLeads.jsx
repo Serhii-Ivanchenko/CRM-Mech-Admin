@@ -1,9 +1,9 @@
-import styles from "./CardItemLids.module.css";
+import styles from "./CardItemLeads.module.css";
 import { format } from "date-fns";
 import AvatarImg from "../../../../assets/images/crmAdminImg/Frame 854.png";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectVisibilityLids } from "../../../../redux/visibility/selectors";
+import { selectVisibilityLeads } from "../../../../redux/visibility/selectors";
 import {
   BsCalendarDate,
   BsChatDots,
@@ -14,8 +14,8 @@ import {
 import { HiDotsVertical } from "react-icons/hi";
 import { RiBusWifiFill } from "react-icons/ri";
 
-export default function CardItemLids({ record, onDragStart }) {
-  const visibility = useSelector(selectVisibilityLids);
+export default function CardItemLeads({ record, onDragStart }) {
+  const visibility = useSelector(selectVisibilityLeads);
 
   const [isDragging, setIsDragging] = useState(false);
   const [draggingElement, setDraggingElement] = useState(null);
@@ -39,13 +39,13 @@ export default function CardItemLids({ record, onDragStart }) {
   const handleDragStart = (e) => {
     setIsDragging(true);
     onDragStart(e, record.id);
-  
+
     // Відключаємо стандартне перетягування
     const img = new Image();
     img.src = "";
     e.dataTransfer.setDragImage(img, 0, 0);
   };
-  
+
   const handleDrag = (e) => {
     if (draggingElement) {
       const currentX = e.clientX;
@@ -98,55 +98,54 @@ export default function CardItemLids({ record, onDragStart }) {
           />
         </div>
         <div className={styles.userInfo}>
-          <span className={styles.textName}>{name ? name : "Гість"}</span>
+          <p className={styles.textName}>{name ? name : "Гість"}</p>
           {visibility.phone && (
-            <span className={styles.textTel}>
+            <p className={styles.textTel}>
               {phone ? phone : "ххх-ххххххх"}
-            </span>
+            </p>
           )}
         </div>
       </div>
       <div className={styles.eventContainer}>
         {status !== "new" && (
           <div className={styles.eventInfo}>
-            <span className={styles.date}>
+            <p className={styles.date}>
               {date ? formatDate(date) : "Дата не обрана"}
-            </span>{" "}
-            <span className={styles.event}>{event}</span>
-            <span className={styles.time}>{time ? time : "хх:хх"}</span>
+            </p>{" "}
+            <p className={styles.event}>{event}</p>
+            <p className={styles.time}>{time ? time : "хх:хх"}</p>
           </div>
         )}
-        {status === "appointments" && (
+        {(status === "equipment" || status === "connection") && (
           <div className={styles.master}>
             <BsPersonBoundingBox size={18} />
-            <span className={styles.masterName}>Петров Николай</span>
+            <p className={styles.masterName}>Петров Николай</p>
           </div>
         )}
         <div className={styles.companyInfo}>
-          <BsReverseLayoutTextSidebarReverse size={18} color="#00A3FF" />
-          <span className={styles.companyName}>{company}</span>
+          <BsReverseLayoutTextSidebarReverse size={18} color="#00A3FF" className={styles.iconBlue}/>
+          <p className={styles.companyName}>{company}</p>
         </div>
-        <div className={styles.line}></div>
       </div>
       <div className={styles.settingsContainer}>
         <div className={styles.firstContainer}>
           <RiBusWifiFill size={20} />
-          <span className={styles.postCount}>{post}</span>
+          <p className={styles.postCount}>{post}</p>
         </div>
         <div className={styles.locationsContainer}>
           <BsGeoAltFill size={18} />
-          <span className={styles.city}>{city ? city : "Дані Відсутні"}</span>
+          <p className={styles.city}>{city ? city : "Дані Відсутні"}</p>
         </div>
         <div className={styles.btnContainer}>
+          {<button>
+            <BsChatDots size={20} color="#00A3FF" className={styles.iconBlue}/>
+          </button>}
           <button>
-            <BsChatDots size={20} color="#00A3FF" />
+            <BsCalendarDate size={20} color="#00A3FF" className={styles.iconBlue} />
           </button>
-          <button>
-            <BsCalendarDate size={20} color="#00A3FF" />
-          </button>
-          <button>
+          {status !== "new" && (<button>
             <HiDotsVertical size={18} color="#D8E1FF" />
-          </button>
+          </button>)}
         </div>
       </div>
     </div>

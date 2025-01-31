@@ -1,7 +1,7 @@
-import CardItemLids from '../CardItemLids/CardItemLids';
-import styles from "./CardListLids.module.css";
+import CardItemLeads from '../CardItemLeads/CardItemLeads';
+import styles from "./CardListLeads.module.css";
 
-export default function DayCarsListCrm({ records, onDragStart }) {
+export default function CardListLeads({ records, onDragStart }) {
 
   if (records.length === 0) return null;
 
@@ -9,7 +9,7 @@ export default function DayCarsListCrm({ records, onDragStart }) {
     <div className={styles.listContainer}>
       <ul className={styles.cardList}>
         {records.map((record) => (
-          <CardItemLids
+          <CardItemLeads
             key={record.id}
             record={record}
             onDragStart={onDragStart}

@@ -1,21 +1,31 @@
 // Лейбл для сторінки лідів - налаштування видимості
 
-export const labelNamesLids = {
+export const labelNamesLeads = {
   name: "Ім'я",
   phone: "Телефон",
 };
 
-export const statusLidsMapping ={
+// Лейбл для сторінки dashBoard - налаштування видимості
+
+export const labelNamesDashBoard = {
+  sales: "Продажи",
+  costs: "Витрати",
+  profit: "Прибуток",
+  leads: "Ліди",
+  newСlients: "Нові клієнти",
+};
+
+export const statusLeadsMapping ={
   new: "Новий",
   contact: "Контакт",
   payment: "Оплата",
-  appointments: "Обладнання",
+  equipment: "Обладнання",
   connection: "Підключення",
 };
 
 // Тимчасовий масив для сторінкі Лідів
 
-export const cardsLids = [
+export const cardsLeads = [
   {
     id: 1,
     photo_url: null,
@@ -48,7 +58,7 @@ export const cardsLids = [
     name: "Іван Кондратекно",
     phone: "0507953489",
     company: "Спектр",
-    status: "appointments",
+    status: "equipment",
     date: "2025-01-08",
     time: "17:00",
     event:"Підключення камер",
@@ -77,7 +87,7 @@ export const cardsLids = [
     status: "payment",
     date: "2025-01-12",
     time: "18:00",
-    event:"Спала за продукт",
+    event:"Сплата за продукт",
     post: 21,
     city: "Харків",
   },
