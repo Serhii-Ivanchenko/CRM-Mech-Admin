@@ -13,3 +13,9 @@ export const selectVisibilityRecords = (state) => state.visibility.visibilityRec
 export const selectVisibilityArchive = (state) => state.visibility.visibilityArchive;
 
 export const selectVisibilityRecomendations = (state) => state.visibility.visibilityCarRecomendations;
+
+// для проекту CRM-Mech-Admin
+
+export const selectVisibilityLeads = (state) => state.visibility.visibilityLeads;
+
+export const selectVisibilityDashBoard = (state) => state.visibility.visibilityDashBoard;
