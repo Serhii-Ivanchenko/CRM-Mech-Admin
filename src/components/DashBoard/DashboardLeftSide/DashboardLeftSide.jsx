@@ -20,7 +20,10 @@ const leftCard = [
         icon: (
           <p
             className={css.numberIcon}
-            style={{ backgroundColor: "green", color: "var(--light-gray)" }}
+            style={{
+              backgroundColor: "var(--green-btn-normal)",
+              color: "var(--light-gray)",
+            }}
           >
             20
           </p>
@@ -33,7 +36,7 @@ const leftCard = [
           <p
             className={css.numberIcon}
             style={{
-              backgroundColor: "var(  --status-new)",
+              backgroundColor: "var(--status-new)",
               color: "var(--bg-input)",
             }}
           >
