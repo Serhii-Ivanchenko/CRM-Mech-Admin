@@ -16,11 +16,7 @@
   opacity: 0.1;
   cursor: grabbing;
 }
-
-/* .crmBlockDayCarsItemContainer.cursorComplete{
-    cursor: default;
-  }
-   */
+/* 
 .cloneDragging {
   opacity: 1;
   box-shadow: 11px 21px 14px 0px rgba(0, 0, 0, 0.25);
@@ -29,7 +25,7 @@
   background-color: var(--bg-input);
   z-index: 1000;
   transition: transform 0.5s ease-out;
-}
+} */
 
 .userContainer {
   display: flex;
@@ -124,7 +120,6 @@
   align-items: center;
   gap: 10px;
   padding: 4px 10px;
-  margin-top: 6px;
 }
 .firstContainer {
   padding-left: 0;
@@ -139,13 +134,13 @@
 .settingsContainer {
   display: flex;
   border-top: 2px solid rgba(216, 225, 255, 0.5);
+  padding-top: 6px;
 }
 
 .btnContainer {
   display: flex;
   margin-left: auto;
   gap: 12px;
-  margin-top: 6px;
 }
 
 button {
