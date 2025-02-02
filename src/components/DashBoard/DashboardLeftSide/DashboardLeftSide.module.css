@@ -59,6 +59,9 @@
 
   border-radius: 6px;
   background: var(--green-btn-normal);
+
+  font-size: 14px;
+  line-height: normal;
 }
 
 .amountOfMoney {
@@ -66,7 +69,7 @@
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.1875em;
 }
 
 .bottomPart {
@@ -89,7 +92,7 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  /* line-height: normal; */
+  line-height: 1.1em;
 }
 
 .icon {
@@ -101,7 +104,7 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  /* line-height: normal; */
+  line-height: 1.1em;
 }
 
 .lightCard {
@@ -136,7 +139,7 @@
 
 .dataText {
   color: var(--light-gray);
-  font-variant-numeric: lining-nums proportional-nums;
+  /* font-variant-numeric: lining-nums proportional-nums; */
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -178,6 +181,8 @@
 
   border-radius: 0px 12px 12px 0px;
   background-color: var(--bg-input);
+  border: none;
+  cursor: pointer;
 }
 
 .numberIcon {
@@ -186,12 +191,12 @@
   border-radius: 6px;
 
   display: flex;
-  padding: 4px;
+  /* padding: 4px; */
   justify-content: center;
   align-items: center;
 
   text-align: center;
-  font-variant-numeric: lining-nums proportional-nums;
+  /* font-variant-numeric: lining-nums proportional-nums; */
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -203,7 +208,7 @@
   display: flex;
   width: 26px;
   height: 26px;
-  padding: 4px;
+  /* padding: 4px; */
   justify-content: center;
   align-items: center;
 
