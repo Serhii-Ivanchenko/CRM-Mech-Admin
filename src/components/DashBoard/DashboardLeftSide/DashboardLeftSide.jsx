@@ -201,9 +201,9 @@ export default function DashboardLeftSide() {
               )}
             </div>
 
-            <div className={css.threeDotsBox}>
+            <button className={css.threeDotsBox}>
               <BsThreeDotsVertical size={20} className={css.icon} />
-            </div>
+            </button>
           </li>
         ))}
       </ul>
