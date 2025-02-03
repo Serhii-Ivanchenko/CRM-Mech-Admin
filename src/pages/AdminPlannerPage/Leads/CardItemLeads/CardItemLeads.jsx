@@ -1,7 +1,7 @@
 import styles from "./CardItemLeads.module.css";
 import { format } from "date-fns";
 import AvatarImg from "../../../../assets/images/crmAdminImg/Frame 854.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectVisibilityLeads } from "../../../../redux/visibility/selectors";
 import {
@@ -11,11 +11,15 @@ import {
   BsPersonBoundingBox,
   BsReverseLayoutTextSidebarReverse,
 } from "react-icons/bs";
-import { HiDotsVertical } from "react-icons/hi";
 import { RiBusWifiFill } from "react-icons/ri";
+import EventSelect from "../EventSelect/EventSelect";
+import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
 
 export default function CardItemLeads({ record, onDragStart }) {
   const visibility = useSelector(selectVisibilityLeads);
+  const [currentEvent, setCurrentEvent] = useState(
+    record.event || eventOptions[record.status]?.[0] || ""
+  );
 
   const [isDragging, setIsDragging] = useState(false);
   const [draggingElement, setDraggingElement] = useState(null);
@@ -32,9 +36,18 @@ export default function CardItemLeads({ record, onDragStart }) {
     time,
     city,
     company,
-    event,
     post,
   } = record;
+
+  useEffect(() => {
+    if (status && eventOptions[status]) {
+      setCurrentEvent(eventOptions[status][0]);
+    }
+  }, [status]);
+
+  const handleEventChange = (newEvent) => {
+    setCurrentEvent(newEvent);
+  };
 
   const handleDragStart = (e) => {
     setIsDragging(true);
@@ -100,9 +113,7 @@ export default function CardItemLeads({ record, onDragStart }) {
         <div className={styles.userInfo}>
           <p className={styles.textName}>{name ? name : "Гість"}</p>
           {visibility.phone && (
-            <p className={styles.textTel}>
-              {phone ? phone : "ххх-ххххххх"}
-            </p>
+            <p className={styles.textTel}>{phone ? phone : "ххх-ххххххх"}</p>
           )}
         </div>
       </div>
@@ -112,7 +123,7 @@ export default function CardItemLeads({ record, onDragStart }) {
             <p className={styles.date}>
               {date ? formatDate(date) : "Дата не обрана"}
             </p>{" "}
-            <p className={styles.event}>{event}</p>
+            <p className={styles.event}>{currentEvent}</p>
             <p className={styles.time}>{time ? time : "хх:хх"}</p>
           </div>
         )}
@@ -123,7 +134,11 @@ export default function CardItemLeads({ record, onDragStart }) {
           </div>
         )}
         <div className={styles.companyInfo}>
-          <BsReverseLayoutTextSidebarReverse size={18} color="#00A3FF" className={styles.iconBlue}/>
+          <BsReverseLayoutTextSidebarReverse
+            size={18}
+            color="#00A3FF"
+            className={styles.iconBlue}
+          />
           <p className={styles.companyName}>{company}</p>
         </div>
       </div>
@@ -137,15 +152,29 @@ export default function CardItemLeads({ record, onDragStart }) {
           <p className={styles.city}>{city ? city : "Дані Відсутні"}</p>
         </div>
         <div className={styles.btnContainer}>
-          {<button>
-            <BsChatDots size={20} color="#00A3FF" className={styles.iconBlue}/>
-          </button>}
+          {
+            <button>
+              <BsChatDots
+                size={20}
+                color="#00A3FF"
+                className={styles.iconBlue}
+              />
+            </button>
+          }
           <button>
-            <BsCalendarDate size={20} color="#00A3FF" className={styles.iconBlue} />
+            <BsCalendarDate
+              size={20}
+              color="#00A3FF"
+              className={styles.iconBlue}
+            />
           </button>
-          {status !== "new" && (<button>
-            <HiDotsVertical size={18} color="#D8E1FF" />
-          </button>)}
+          {status !== "new" && (
+            <EventSelect
+              status={status}
+              onEventChange={handleEventChange}
+              currentEvent={currentEvent}
+            />
+          )}
         </div>
       </div>
     </div>

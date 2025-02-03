@@ -23,6 +23,33 @@ export const statusLeadsMapping ={
   connection: "Підключення",
 };
 
+// Селекти подій в картках Leads
+export const eventOptions = {
+  contact: [
+    "Дзвінок-знайомство", 
+    "Презентація продукту", 
+    "Вибір пакету послуг", 
+    "Укладення договору"
+  ],
+  payment: [
+    "Сплата за відеокамери", 
+    "Сплата за продукт", 
+    "Додаткова сплата за відеокамери"
+  ],
+  equipment: [
+    "Отримання відеокамер", 
+    "Налаштування відеокамер", 
+    "Відправка клієнту відеокамер", 
+    "Підключення відеокамер"
+  ],
+  connection: [
+    "Створення тестової БД",
+    "Інтеграція БД клієнта",
+    "Навчання співробітників",
+    "Чек-лист готовності"
+  ]
+};
+
 // Тимчасовий масив для сторінкі Лідів
 
 export const cardsLeads = [
@@ -48,7 +75,7 @@ export const cardsLeads = [
     status: "contact",
     date: "2025-01-26",
     time: "15:45",
-    event:"Презентація продукту",
+    event:null,
     post: 23,
     city: "Київ",
   },
@@ -61,7 +88,7 @@ export const cardsLeads = [
     status: "equipment",
     date: "2025-01-08",
     time: "17:00",
-    event:"Підключення камер",
+    event:null,
     post: 20,
     city: "Чернівці",
   },
@@ -74,7 +101,7 @@ export const cardsLeads = [
     status: "connection",
     date: "2025-02-01",
     time: "9:00",
-    event:"Чек-лист готовності",
+    event:null,
     post: 20,
     city: "Чернівці",
   },
@@ -87,7 +114,7 @@ export const cardsLeads = [
     status: "payment",
     date: "2025-01-12",
     time: "18:00",
-    event:"Сплата за продукт",
+    event:null,
     post: 21,
     city: "Харків",
   },
@@ -100,7 +127,7 @@ export const cardsLeads = [
     status: "connection",
     date: "2025-01-15",
     time: "13:00",
-    event:"Інтеграція БД клієнта",
+    event:null,
     post: 23,
     city: "Київ",
   },
@@ -126,7 +153,7 @@ export const cardsLeads = [
     status: "connection",
     date: "2025-01-19",
     time: "11:00",
-    event:"Створення тестової БД",
+    event:null,
     post: 23,
     city: "Київ",
   },
@@ -139,7 +166,7 @@ export const cardsLeads = [
     status: "connection",
     date: "2025-01-08",
     time: "17:00",
-    event:"Навчання співробітників",
+    event:null,
     post: 15,
     city: "Одеса",
   },
