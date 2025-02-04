@@ -1,7 +1,8 @@
 import styles from "./CardItemLeads.module.css";
 import { format } from "date-fns";
+import ava1 from "../../../../assets/images/avatar_default.png";
 import AvatarImg from "../../../../assets/images/crmAdminImg/Frame 854.png";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { selectVisibilityLeads } from "../../../../redux/visibility/selectors";
 import {
@@ -9,13 +10,46 @@ import {
   BsChatDots,
   BsGeoAltFill,
   BsPersonBoundingBox,
+  BsPlusCircleDotted,
   BsReverseLayoutTextSidebarReverse,
 } from "react-icons/bs";
-import { HiDotsVertical } from "react-icons/hi";
 import { RiBusWifiFill } from "react-icons/ri";
+import EventSelect from "../EventSelect/EventSelect";
+import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
+import MenegerPopover from "../MenegerPopover/MenegerPopover";
+
+const staffs = [
+  {
+    id: 1,
+    name: "Катерина Матяш",
+    email: "kate@avtoatmosfera.com",
+    avatar: ava1,
+    isActive: true,
+  },
+  {
+    id: 2,
+    name: "Олена Ким",
+    email: "kim@avtoatmosfera.com",
+    avatar: ava1,
+    isActive: true,
+  },
+  {
+    id: 3,
+    name: "Катерина Котасонова",
+    email: "kate.k@avtoatmosfera.com",
+    avatar: ava1,
+    isActive: false,
+  },
+];
 
 export default function CardItemLeads({ record, onDragStart }) {
   const visibility = useSelector(selectVisibilityLeads);
+  const [currentEvent, setCurrentEvent] = useState(
+    record.event || eventOptions[record.status]?.[0] || ""
+  );
+  const [isModalStaffPlus, setIsModalStaffPlus] = useState(false);
+  const [assignedManager, setAssignedManager] = useState(null);
+  const modalRef = useRef(null);
 
   const [isDragging, setIsDragging] = useState(false);
   const [draggingElement, setDraggingElement] = useState(null);
@@ -32,9 +66,31 @@ export default function CardItemLeads({ record, onDragStart }) {
     time,
     city,
     company,
-    event,
     post,
   } = record;
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalStaffPlus(false); // Закриваємо модалку
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (status && eventOptions[status]) {
+      setCurrentEvent(eventOptions[status][0]);
+    }
+  }, [status]);
+
+  const handleEventChange = (newEvent) => {
+    setCurrentEvent(newEvent);
+  };
 
   const handleDragStart = (e) => {
     setIsDragging(true);
@@ -91,18 +147,43 @@ export default function CardItemLeads({ record, onDragStart }) {
     >
       <div className={styles.userContainer}>
         <div className={styles.userPhoto}>
+          {/* Відображаємо аватар клієнта */}
           <img
             src={avatarPhoto}
             alt="Client's Photo"
             className={styles.clientImg}
           />
+
+          {/* Відображення менеджера або кнопки плюса */}
+          {assignedManager ? (
+            <img
+              src={assignedManager.avatar || "/default-avatar.png"}
+              alt="Manager Avatar"
+              className={styles.managerAvatar}
+            />
+          ) : (
+            <BsPlusCircleDotted
+              className={styles.plusIcon}
+              onClick={() => setIsModalStaffPlus(true)}
+            />
+          )}
         </div>
+
+        {isModalStaffPlus && (
+          <MenegerPopover
+            onClose={() => setIsModalStaffPlus(false)}
+            staffs={staffs}
+            onStaffSelect={(staff) => {
+              setAssignedManager(staff);
+              setIsModalStaffPlus(false);
+            }}
+            offsetLeft={14}
+          />
+        )}
         <div className={styles.userInfo}>
           <p className={styles.textName}>{name ? name : "Гість"}</p>
           {visibility.phone && (
-            <p className={styles.textTel}>
-              {phone ? phone : "ххх-ххххххх"}
-            </p>
+            <p className={styles.textTel}>{phone ? phone : "ххх-ххххххх"}</p>
           )}
         </div>
       </div>
@@ -112,7 +193,7 @@ export default function CardItemLeads({ record, onDragStart }) {
             <p className={styles.date}>
               {date ? formatDate(date) : "Дата не обрана"}
             </p>{" "}
-            <p className={styles.event}>{event}</p>
+            <p className={styles.event}>{currentEvent}</p>
             <p className={styles.time}>{time ? time : "хх:хх"}</p>
           </div>
         )}
@@ -123,7 +204,11 @@ export default function CardItemLeads({ record, onDragStart }) {
           </div>
         )}
         <div className={styles.companyInfo}>
-          <BsReverseLayoutTextSidebarReverse size={18} color="#00A3FF" className={styles.iconBlue}/>
+          <BsReverseLayoutTextSidebarReverse
+            size={18}
+            color="#00A3FF"
+            className={styles.iconBlue}
+          />
           <p className={styles.companyName}>{company}</p>
         </div>
       </div>
@@ -137,15 +222,29 @@ export default function CardItemLeads({ record, onDragStart }) {
           <p className={styles.city}>{city ? city : "Дані Відсутні"}</p>
         </div>
         <div className={styles.btnContainer}>
-          {<button>
-            <BsChatDots size={20} color="#00A3FF" className={styles.iconBlue}/>
-          </button>}
+          {
+            <button>
+              <BsChatDots
+                size={20}
+                color="#00A3FF"
+                className={styles.iconBlue}
+              />
+            </button>
+          }
           <button>
-            <BsCalendarDate size={20} color="#00A3FF" className={styles.iconBlue} />
+            <BsCalendarDate
+              size={20}
+              color="#00A3FF"
+              className={styles.iconBlue}
+            />
           </button>
-          {status !== "new" && (<button>
-            <HiDotsVertical size={18} color="#D8E1FF" />
-          </button>)}
+          {status !== "new" && (
+            <EventSelect
+              status={status}
+              onEventChange={handleEventChange}
+              currentEvent={currentEvent}
+            />
+          )}
         </div>
       </div>
     </div>

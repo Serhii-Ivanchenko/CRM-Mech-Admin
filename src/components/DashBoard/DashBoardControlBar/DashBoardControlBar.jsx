@@ -27,7 +27,7 @@ export default function DashBoardControlBar() {
           selectVisibility={selectVisibilityDashBoard}
           toggleVisibilityAction={toggleVisibilityDashBoard}
           labelNames={labelNamesDashBoard}
-          // className={css.settingsContainerInCrm}
+          className={css.settingsContainerInCrm}
         />
       </div>
     </div>

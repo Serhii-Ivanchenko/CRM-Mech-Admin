@@ -27,7 +27,7 @@ export default function AdminPlannerControlBar() {
           selectVisibility={selectVisibilityLeads}
           toggleVisibilityAction={toggleVisibilityLeads}
           labelNames={labelNamesLeads}
-          // className={css.settingsContainerInCrm}
+          className={css.settingsContainerInCrm}
         />
     </div>
     
