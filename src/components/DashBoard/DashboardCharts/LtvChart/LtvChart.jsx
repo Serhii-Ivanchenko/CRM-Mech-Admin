@@ -187,7 +187,7 @@ let data = ltvData.map((el) => ({
             <YAxis
               domain={[0, (dataMax) => dataMax + 100]}
               dataKey="ltv_count"
-              margin={{ topt: 10 }}
+              margin={{ top: 10 }}
               tick={{ fontSize: 10 }}
               interval={interval}
               tickCount={maxY + 1}
