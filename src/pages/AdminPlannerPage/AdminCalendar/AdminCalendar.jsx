@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import {
   ScheduleComponent,
   Day,
@@ -8,46 +6,47 @@ import {
   Month,
   Agenda,
   Inject,
+  //   PopupOpenEventArgs,
 } from "@syncfusion/ej2-react-schedule";
-import { fetchGoogleCalendarEvents } from "../../../redux/auth/operations";
+import EventEditorTemplate from "./EventEditorTemplate";
+
+// Кастомний шаблон редактора для створення/редагування події
+const eventEditorTemplate = () => {
+  return (
+    <>
+      <EventEditorTemplate />
+    </>
+  );
+};
 
 export default function AdminCalendar() {
-  const [events, setEvents] = useState([]);
-  const dispatch = useDispatch();
-  const {
-    events: calendarEvents,
-    loading,
-    error,
-  } = useSelector((state) => state.auth); // Correctly accessing events in 'auth' slice
+  const data = [
+    {
+      Id: 1,
+      Subject: "Meeting",
+      StartTime: new Date(2023, 1, 15, 10, 0),
+      EndTime: new Date(2023, 1, 15, 12, 30),
+      Client: "John Doe",
+    },
+  ];
 
-  useEffect(() => {
-    const token = localStorage.getItem("X-Api-Key"); // Assuming the token is stored in localStorage
-    if (token) {
-      dispatch(fetchGoogleCalendarEvents(token)); // Dispatching the action
+  // Обробник події для відкриття попапа
+  const handlePopupOpen = (args) => {
+    if (args.type === "Editor") {
+      // Можна додати логіку перед відкриттям вікна
+      console.log("Popup opened for event creation/edit");
     }
-  }, [dispatch]);
-
-  useEffect(() => {
-    if (calendarEvents) {
-      // Format the events after they are fetched
-      const formattedEvents = calendarEvents.map((event) => ({
-        Id: event.id,
-        Subject: event.summary,
-        StartTime: new Date(event.start.dateTime),
-        EndTime: new Date(event.end.dateTime),
-      }));
-      setEvents(formattedEvents); // Set formatted events to local state
-    }
-  }, [calendarEvents]);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  };
 
   return (
     <div>
       <ScheduleComponent
-        selectedDate={new Date()}
-        eventSettings={{ dataSource: events }}
+        selectedDate={new Date(2023, 1, 15)}
+        eventSettings={{
+          dataSource: data,
+        }}
+        editorTemplate={eventEditorTemplate} // Кастомний шаблон для редактора
+        popupOpen={handlePopupOpen} // Подія відкриття попапа
       >
         <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
       </ScheduleComponent>
