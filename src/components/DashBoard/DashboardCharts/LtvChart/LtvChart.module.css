@@ -6,13 +6,7 @@
     background: var(--bg-secondary);
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     /* height: clamp(323px, calc(323px + (86 * ((100vh - 900px) / 180))), 337px); */
-    padding: 18px 15px;
-}
-
-
-.responseContainer {
-    height: 317px;
-    width: 457px;
+    padding: 15px 15px;
 }
 
 .stattitle {
@@ -36,7 +30,7 @@
 
 .areabox {
     /* width: 467px; */
-    height: 255px;
+    height: 261px;
     /* height: clamp(255px, calc(255px + (66 * ((100vh - 900px) / 180))), 270px); */
     /* margin-left: -10px; */
 }
