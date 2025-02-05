@@ -5,7 +5,6 @@ import {
   axiosInstance,
 } from "../../services/api.js";
 
-
 //User registration
 export const register = createAsyncThunk(
   "auth/register",
@@ -221,7 +220,7 @@ export const logInWithGoogle = createAsyncThunk(
 // Change password
 export const changePassword = createAsyncThunk(
   "auth/changePassword",
-  async ({old_password, new_password}, thunkAPI) => {
+  async ({ old_password, new_password }, thunkAPI) => {
     try {
       const response = await axiosInstance.put("/auth/change_password/", null, {
         params: { old_password, new_password },
@@ -231,4 +230,46 @@ export const changePassword = createAsyncThunk(
       return thunkAPI.rejectWithValue(error.response.data.message);
     }
   }
-)
+);
+
+// Fetch Google Calendar Events
+export const fetchGoogleCalendarEvents = createAsyncThunk(
+  "googleCalendar/fetchEvents",
+  async (token, thunkAPI) => {
+    try {
+      const response = await axiosInstance.get(
+        "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return response.data.items;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+// Create Google Calendar Event
+export const createGoogleCalendarEvent = createAsyncThunk(
+  "googleCalendar/createEvent",
+  async ({ token, eventData }, thunkAPI) => {
+    try {
+      const response = await axiosInstance.post(
+        "https://www.googleapis.com/calendar/v3/calendars/primary/events",
+        eventData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Event Created:", response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

@@ -30,6 +30,7 @@ export const initialState = {
       },
       session_id: null,
       role: null,
+      events: [],
     },
     apiKey: null,
     isLoggedIn: false,
