@@ -13,8 +13,6 @@ import {
   updateUserData,
   validateEmail,
   changePassword,
-  createGoogleCalendarEvent,
-  fetchGoogleCalendarEvents,
 } from "./operations.js";
 
 const handlePending = (state) => {
@@ -163,28 +161,6 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(fetchGoogleCalendarEvents.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(fetchGoogleCalendarEvents.fulfilled, (state, action) => {
-        state.loading = false;
-        state.events = action.payload;
-      })
-      .addCase(fetchGoogleCalendarEvents.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      })
-      .addCase(createGoogleCalendarEvent.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(createGoogleCalendarEvent.fulfilled, (state, action) => {
-        state.loading = false;
-        state.events.push(action.payload); // Add created event to the events list
-      })
-      .addCase(createGoogleCalendarEvent.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
-      }),
 });
 
 export const { setSelectedServiceId } = authSlice.actions;

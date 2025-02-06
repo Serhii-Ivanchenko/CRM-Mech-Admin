@@ -9,16 +9,19 @@ import {
   Agenda,
   Inject,
 } from "@syncfusion/ej2-react-schedule";
-import { fetchGoogleCalendarEvents } from "../../../redux/auth/operations";
+import { fetchGoogleCalendarEvents } from "../../../redux/calendar/operations.js";
+import {
+  selectEvents,
+  selectLoading,
+} from "../../../redux/calendar/selectors.js";
+import { selectError } from "../../../redux/crm/selectors.js";
 
 export default function AdminCalendar() {
   const [events, setEvents] = useState([]);
   const dispatch = useDispatch();
-  const {
-    events: calendarEvents,
-    loading,
-    error,
-  } = useSelector((state) => state.auth); // Correctly accessing events in 'auth' slice
+  const calendarEvents = useSelector(selectEvents); // Correctly accessing events in 'auth' slice
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     const token = localStorage.getItem("X-Api-Key"); // Assuming the token is stored in localStorage

@@ -30,11 +30,16 @@ export const initialState = {
       },
       session_id: null,
       role: null,
-      events: [],
     },
     apiKey: null,
     isLoggedIn: false,
     isRefreshing: false,
+    isLoading: false,
+    error: null,
+  },
+
+  calendar: {
+    events: [],
     isLoading: false,
     error: null,
   },
