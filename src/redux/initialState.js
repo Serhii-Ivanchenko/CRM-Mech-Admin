@@ -38,6 +38,12 @@ export const initialState = {
     error: null,
   },
 
+  calendar: {
+    events: [],
+    isLoading: false,
+    error: null,
+  },
+
   cars: {
     car: {
       car_id: null,

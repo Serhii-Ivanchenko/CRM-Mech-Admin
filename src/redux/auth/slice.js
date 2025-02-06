@@ -160,7 +160,7 @@ const authSlice = createSlice({
         // state.newPassword = action.payload.new_password;
         state.isLoading = false;
         state.error = null;
-      }),
+      })
 });
 
 export const { setSelectedServiceId } = authSlice.actions;

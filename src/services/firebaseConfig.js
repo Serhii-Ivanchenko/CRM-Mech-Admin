@@ -26,5 +26,8 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 provider.addScope("https://www.googleapis.com/auth/userinfo.email");
 provider.addScope("https://www.googleapis.com/auth/userinfo.profile");
+// Додаємо скоупи для Google Calendar
+provider.addScope("https://www.googleapis.com/auth/calendar.readonly"); // Для доступу до календаря
+provider.addScope("https://www.googleapis.com/auth/calendar.events"); // Для створення/оновлення подій
 
 export { auth, provider };
