@@ -1,0 +1,49 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 23px 45px;
+  gap: 11px;
+  border-radius: 12px;
+  background: #206a83;
+}
+
+.eventName {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.period {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  margin-left: 11px;
+}
+
+.avatar {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid var(--CRM-modal-MainBG, #17181c);
+}
+
+/* .avatar:first-child {
+  margin-left: 10px;
+} */
