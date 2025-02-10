@@ -137,7 +137,7 @@ export default function ClientsDynamicsChart() {
   const generateTicks = (maxY, interval) => {
     return Array.from(
       { length: Math.floor(maxY / (interval + 1)) + 2 },
-      (_, i) => i * (interval + 1) 
+      (_, i) => i * (interval + 1)
     );
   };
 
