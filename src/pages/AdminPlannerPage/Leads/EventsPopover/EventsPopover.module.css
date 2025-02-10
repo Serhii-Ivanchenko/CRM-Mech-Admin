@@ -1,0 +1,23 @@
+.popoverContainer {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  width: 200px;
+
+  background-color: var(--bg-input);
+  border: none;
+  box-shadow: -1px 3px 18px 7px rgba(0, 0, 0, 0.25);
+  padding: 10px 25px;
+}
+
+.eventItem{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.185em;
+}
+
+.eventsList{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
