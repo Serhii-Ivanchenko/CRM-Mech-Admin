@@ -1,21 +1,12 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import css from "./MenegerPopover.module.css";
+import useOutsideClick from "../../../../utils/CrmAdminUtils/useOutsideClick";
 
 const MenegerPopover = ({ onClose, staffs, onStaffSelect, offsetLeft = 0 }) => {
   const popoverRef = useRef(null);
 
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
-        onClose();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [onClose]);
+  // Використовуємо хук для обробки кліків поза поповер
+  useOutsideClick(popoverRef, onClose);
 
   return (
     <div
@@ -41,7 +32,9 @@ const MenegerPopover = ({ onClose, staffs, onStaffSelect, offsetLeft = 0 }) => {
             <span
               className={css.notificationBubble}
               style={{
-                backgroundColor: item.isActive ? "var(--green)" : "var(--input-text)",
+                backgroundColor: item.isActive
+                  ? "var(--green)"
+                  : "var(--input-text)",
               }}
             ></span>
           </div>

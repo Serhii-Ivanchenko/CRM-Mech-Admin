@@ -14,9 +14,11 @@ import {
   BsReverseLayoutTextSidebarReverse,
 } from "react-icons/bs";
 import { RiBusWifiFill } from "react-icons/ri";
-import EventSelect from "../EventSelect/EventSelect";
 import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
 import MenegerPopover from "../MenegerPopover/MenegerPopover";
+import CardSettingsBtn from "../CardSettingsBtn/CardSettingsBtn";
+import useOutsideClick from "../../../../utils/CrmAdminUtils/useOutsideClick";
+import EventsPopover from "../EventsPopover/EventsPopover";
 
 const staffs = [
   {
@@ -47,9 +49,11 @@ export default function CardItemLeads({ record, onDragStart }) {
   const [currentEvent, setCurrentEvent] = useState(
     record.event || eventOptions[record.status]?.[0] || ""
   );
-  const [isModalStaffPlus, setIsModalStaffPlus] = useState(false);
   const [assignedManager, setAssignedManager] = useState(null);
   const modalRef = useRef(null);
+  const [isModalStaffPlus, setIsModalStaffPlus] = useState(false);
+  const [isPopoverSettingsOpen, setIsPopoverSettingsOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const [isDragging, setIsDragging] = useState(false);
   const [draggingElement, setDraggingElement] = useState(null);
@@ -57,7 +61,7 @@ export default function CardItemLeads({ record, onDragStart }) {
   const [initialY, setInitialY] = useState(0);
 
   const {
-    // id,
+    id,
     photo_url: photoUrl,
     status,
     name,
@@ -68,29 +72,14 @@ export default function CardItemLeads({ record, onDragStart }) {
     company,
     post,
   } = record;
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setIsModalStaffPlus(false); // Закриваємо модалку
-      }
-    };
 
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  useOutsideClick(modalRef, () => setIsModalStaffPlus(false));
 
   useEffect(() => {
     if (status && eventOptions[status]) {
       setCurrentEvent(eventOptions[status][0]);
     }
   }, [status]);
-
-  const handleEventChange = (newEvent) => {
-    setCurrentEvent(newEvent);
-  };
 
   const handleDragStart = (e) => {
     setIsDragging(true);
@@ -134,6 +123,15 @@ export default function CardItemLeads({ record, onDragStart }) {
     return format(date, "dd.MM");
   };
 
+  const handleEditClick = () => {
+    setIsEditModalOpen(true);
+    setIsPopoverSettingsOpen(false);
+  };
+
+  const closePopover = () => {
+    setIsEditModalOpen(false);
+  };
+
   return (
     <div
       className={`${styles.recordContainer} ${
@@ -147,26 +145,27 @@ export default function CardItemLeads({ record, onDragStart }) {
     >
       <div className={styles.userContainer}>
         <div className={styles.userPhoto}>
-          {/* Відображаємо аватар клієнта */}
           <img
             src={avatarPhoto}
             alt="Client's Photo"
             className={styles.clientImg}
           />
-
-          {/* Відображення менеджера або кнопки плюса */}
-          {assignedManager ? (
-            <img
-              src={assignedManager.avatar || "/default-avatar.png"}
-              alt="Manager Avatar"
-              className={styles.managerAvatar}
-            />
-          ) : (
-            <BsPlusCircleDotted
-              className={styles.plusIcon}
-              onClick={() => setIsModalStaffPlus(true)}
-            />
-          )}
+          <button
+            onClick={(event) => {
+              event.stopPropagation();
+              setIsModalStaffPlus((prev) => !prev);
+            }}
+          >
+            {assignedManager ? (
+              <img
+                src={assignedManager.avatar || "/default-avatar.png"}
+                alt="Manager Avatar"
+                className={styles.managerAvatar}
+              />
+            ) : (
+              <BsPlusCircleDotted className={styles.plusIcon} />
+            )}
+          </button>
         </div>
 
         {isModalStaffPlus && (
@@ -178,6 +177,7 @@ export default function CardItemLeads({ record, onDragStart }) {
               setIsModalStaffPlus(false);
             }}
             offsetLeft={14}
+            id={id}
           />
         )}
         <div className={styles.userInfo}>
@@ -195,6 +195,14 @@ export default function CardItemLeads({ record, onDragStart }) {
             </p>{" "}
             <p className={styles.event}>{currentEvent}</p>
             <p className={styles.time}>{time ? time : "хх:хх"}</p>
+            {isEditModalOpen && (
+              <EventsPopover
+                status={status}
+                currentEvent={currentEvent}
+                onChangeEvent={setCurrentEvent}
+                onClosePopover={closePopover}
+              />
+            )}
           </div>
         )}
         {(status === "equipment" || status === "connection") && (
@@ -239,10 +247,14 @@ export default function CardItemLeads({ record, onDragStart }) {
             />
           </button>
           {status !== "new" && (
-            <EventSelect
-              status={status}
-              onEventChange={handleEventChange}
-              currentEvent={currentEvent}
+            <CardSettingsBtn
+              isOpen={isPopoverSettingsOpen}
+              onClose={() => setIsPopoverSettingsOpen(false)}
+              onClick={(event) => {
+                event.stopPropagation();
+                setIsPopoverSettingsOpen((prev) => !prev);
+              }}
+              onEdit={handleEditClick}
             />
           )}
         </div>
