@@ -110,3 +110,33 @@
   cursor: pointer;
   transition: background 0.3s;
 }
+
+.day:hover {
+  background: var(--CRM-modal-InputBG, #2d3038);
+  color: #ffffff;
+  border-radius: 12px;
+  border: 2px dashed #943d73;
+}
+
+.addEventButton {
+  display: inline-flex;
+  justify-content: center;
+
+  align-items: center;
+
+  background: transparent;
+  border: none;
+  width: 100%;
+  color: #ffffff;
+}
+
+.occupied {
+  cursor: default;
+  background: transparent;
+  border: none;
+}
+
+.occupied:hover {
+  background: transparent;
+  border: none;
+}

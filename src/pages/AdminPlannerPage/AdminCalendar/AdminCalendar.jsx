@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { format, startOfWeek, endOfWeek, eachDayOfInterval } from "date-fns";
 import { uk } from "date-fns/locale";
 import CellCard from "./CellCard/CellCard";
+import { BsPlusCircleDotted } from "react-icons/bs";
 import styles from "./AdminCalendar.module.css";
 
 const mockupData = [
@@ -35,6 +36,9 @@ export default function AdminCalendar() {
   const [currentWeek] = useState(() =>
     startOfWeek(new Date(), { weekStartsOn: 1 })
   );
+
+  // Стан для визначення наведеного слоту
+  const [hoveredSlot, setHoveredSlot] = useState(null);
 
   const days = useMemo(() => {
     return eachDayOfInterval({
@@ -83,6 +87,7 @@ export default function AdminCalendar() {
               const formattedDate = format(day, "yyyy-MM-dd");
 
               return hours.map((hour) => {
+                const slotKey = `${formattedDate}-${hour}`;
                 const event = mockupData.find(
                   (ev) =>
                     ev.date.trim() === formattedDate &&
@@ -90,8 +95,26 @@ export default function AdminCalendar() {
                 );
 
                 return (
-                  <div key={Math.random() + Date.now()} className={styles.day}>
-                    {event && <CellCard event={event} />}
+                  <div
+                    key={slotKey}
+                    className={`${styles.day} ${event ? styles.occupied : ""}`}
+                    onMouseEnter={() => !event && setHoveredSlot(slotKey)}
+                    onMouseLeave={() => !event && setHoveredSlot(null)}
+                  >
+                    {event ? (
+                      <CellCard event={event} />
+                    ) : (
+                      hoveredSlot === slotKey && (
+                        <button
+                          className={styles.addEventButton}
+                          onClick={() =>
+                            alert(`Створити подію: ${formattedDate} ${hour}`)
+                          }
+                        >
+                          <BsPlusCircleDotted />
+                        </button>
+                      )
+                    )}
                   </div>
                 );
               });
