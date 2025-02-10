@@ -4,18 +4,18 @@ import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
 
 const EventsPopover = ({ status, currentEvent, onChangeEvent, onClosePopover }) => {
   const [eventsList, setEventsList] = useState([]);
-  
+
   useEffect(() => {
     if (status) {
-      setEventsList(eventOptions[status] || []);
+      // Фільтруємо список, щоб прибрати поточну подію
+      const filteredEvents = eventOptions[status]?.filter(event => event !== currentEvent) || [];
+      setEventsList(filteredEvents);
     }
-  }, [status]);
+  }, [status, currentEvent]);
 
   const handleEventClick = (event) => {
-    if (event !== currentEvent) {
-      onChangeEvent(event);
-      onClosePopover();
-    }
+    onChangeEvent(event);
+    onClosePopover();
   };
 
   return (
@@ -24,7 +24,7 @@ const EventsPopover = ({ status, currentEvent, onChangeEvent, onClosePopover }) 
         {eventsList.map((event, index) => (
           <li
             key={index}
-            className={`${styles.eventItem} ${currentEvent === event ? styles.selected : ""}`}
+            className={styles.eventItem}
             onClick={() => handleEventClick(event)}
           >
             {event}
