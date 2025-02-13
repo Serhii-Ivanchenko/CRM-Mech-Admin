@@ -3,7 +3,9 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  padding: 23px 45px;
+  padding: 7px 0;
+  justify-content: center;
+  align-items: center;
   gap: 11px;
   border-radius: 12px;
   background: #206a83;
@@ -16,7 +18,7 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 1.1875em;
 }
 
 .period {
@@ -26,13 +28,13 @@
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  line-height: normal;
+  line-height: 1.1875em;
 }
 
 .avatarContainer {
   display: flex;
   justify-content: center;
-  margin-left: 11px;
+  /* margin-left: 11px; */
 }
 
 .avatar {
@@ -44,6 +46,6 @@
   border: 2px solid var(--CRM-modal-MainBG, #17181c);
 }
 
-/* .avatar:first-child {
-  margin-left: 10px;
-} */
+.avatar:first-child {
+  margin-left: 0px;
+}
