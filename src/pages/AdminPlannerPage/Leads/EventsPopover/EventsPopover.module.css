@@ -7,7 +7,7 @@
   border-radius: 12px;
   border: none;
   box-shadow: -1px 3px 18px 7px rgba(0, 0, 0, 0.25);
-  padding: 10px;
+  /* padding: 10px; */
   z-index: 999;
 }
 
@@ -23,11 +23,20 @@
   font-weight: 400;
   line-height: 1.185em;
   text-align: center;
-  padding: 8px 0;
+  padding: 10px 0;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+}
+
+.eventItem:first-child{
+  border-radius: 12px 12px 0 0;
+}
+
+.eventItem:last-child{
+  border-radius: 0 0 12px 12px;
 }
 
 .eventItem:hover {
   background: var(--main-gray);
 }
+
