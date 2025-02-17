@@ -4,9 +4,8 @@ function CellCard({ event }) {
   return (
     <div className={styles.wrapper}>
       <p className={styles.eventName}>{event.topic}</p>
-      <p className={styles.period}>
-        {`${event.start_time} - ${event.end_time}`}
-      </p>
+      <p className={styles.period}>{`${event.start} - ${event.end}`}</p>
+
       <div className={styles.avatarContainer}>
         {event.members.map((member, index) => (
           <img
