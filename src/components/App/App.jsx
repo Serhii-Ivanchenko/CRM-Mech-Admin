@@ -19,7 +19,6 @@ import css from "./App.module.css";
 import Header from "../Header/Header.jsx";
 import SideBar from "../SideBar/SideBar.jsx";
 
-
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage.jsx"));
 const RegistrationPage = lazy(() =>
@@ -34,7 +33,8 @@ const AdminPlannerPage = lazy(() =>
   import("../../pages/AdminPlannerPage/AdminPlannerPage.jsx")
 );
 const AdminCalendar = lazy(() =>
-  import("../../pages/AdminPlannerPage/AdminCalendar/AdminCalendar.jsx")
+  // import("../../pages/AdminPlannerPage/AdminCalendar/AdminCalendar.jsx")
+  import("../../pages/AdminPlannerPage/AdminCalendar/AdminCalndarLib.jsx")
 );
 const Leads = lazy(() =>
   import("../../pages/AdminPlannerPage/Leads/Leads.jsx")

@@ -1,44 +1,31 @@
 import { useMemo, useState } from "react";
-import { format, startOfWeek, endOfWeek, eachDayOfInterval } from "date-fns";
+import {
+  format,
+  startOfWeek,
+  endOfWeek,
+  eachDayOfInterval,
+  isSameDay,
+  addDays,
+  // addHours,
+} from "date-fns";
 import { uk } from "date-fns/locale";
-import CellCard from "./CellCard/CellCard";
-import { BsPlusCircleDotted } from "react-icons/bs";
-import styles from "./AdminCalendar.module.css";
 
-const mockupData = [
-  {
-    topic: "Staff Meeting",
-    date: "2025-02-11",
-    start_time: "10:00",
-    end_time: "12:00",
-    contributor: "Alex",
-    members: ["Mary", "Dory", "Max"],
-  },
-  {
-    topic: "Team building",
-    date: "2025-02-13",
-    start_time: "10:00",
-    end_time: "11:00",
-    contributor: "Alex",
-    members: ["Mary", "Dory", "Max"],
-  },
-  {
-    topic: "Partners presentation",
-    date: "2025-02-13",
-    start_time: "14:00",
-    end_time: "15:00",
-    contributor: "Alex",
-    members: ["Mary", "Dory", "Max"],
-  },
-];
+import styles from "./AdminCalendar.module.css";
 
 export default function AdminCalendar() {
   const [currentWeek] = useState(() =>
     startOfWeek(new Date(), { weekStartsOn: 1 })
   );
 
-  // Стан для визначення наведеного слоту
-  const [hoveredSlot, setHoveredSlot] = useState(null);
+  // Додаємо стан для подій
+  const [events] = useState([
+    {
+      id: 1,
+      title: "Зустріч",
+      start: addDays(currentWeek, 3),
+      duration: 2,
+    },
+  ]);
 
   const days = useMemo(() => {
     return eachDayOfInterval({
@@ -82,44 +69,51 @@ export default function AdminCalendar() {
             ))}
           </div>
 
-          <div className={styles.daysGrid}>
-            {days.map((day) => {
-              const formattedDate = format(day, "yyyy-MM-dd");
-
-              return hours.map((hour) => {
-                const slotKey = `${formattedDate}-${hour}`;
-                const event = mockupData.find(
-                  (ev) =>
-                    ev.date.trim() === formattedDate &&
-                    ev.start_time.trim() === hour
-                );
-
-                return (
+          {/* Контейнер для подій */}
+          {days.map((day) => (
+            <div key={format(day, "yyyy-MM-dd")} className={styles.dayColumn}>
+              {events
+                .filter((event) => isSameDay(event.start, day))
+                .map((event) => (
                   <div
-                    key={slotKey}
-                    className={`${styles.day} ${event ? styles.occupied : ""}`}
-                    onMouseEnter={() => !event && setHoveredSlot(slotKey)}
-                    onMouseLeave={() => !event && setHoveredSlot(null)}
+                    key={event.id}
+                    className={styles.event}
+                    style={{
+                      top: `${(format(event.start, "H") - 8) * 50}px`, // 50px на годину
+                      height: `${event.duration * 50}px`,
+                    }}
                   >
-                    {event ? (
-                      <CellCard event={event} />
-                    ) : (
-                      hoveredSlot === slotKey && (
-                        <button
-                          className={styles.addEventButton}
-                          onClick={() =>
-                            alert(`Створити подію: ${formattedDate} ${hour}`)
-                          }
-                        >
-                          <BsPlusCircleDotted />
-                        </button>
-                      )
+                    {console.log("event.title:", event.title)}
+                    {console.log("event.start:", event.start)}
+                    {console.log("event calendar day:", day)}
+
+                    {console.log("currentWeek:", currentWeek)}
+                    {console.log(
+                      "currentWeek.toDateString():",
+                      currentWeek.toDateString()
                     )}
+                    {console.log(
+                      "days:",
+                      days.map((day) => day.toDateString())
+                    )}
+                    {console.log(
+                      "event.start after fix:",
+                      events[0].start.toDateString()
+                    )}
+                    {console.log(
+                      "event.start timezone offset:",
+                      event.start.getTimezoneOffset()
+                    )}
+                    {console.log(
+                      "event.start UTC:",
+                      new Date(event.start).toISOString()
+                    )}
+                    {console.log("day UTC:", new Date(day).toISOString())}
+                    {event.title}
                   </div>
-                );
-              });
-            })}
-          </div>
+                ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>
