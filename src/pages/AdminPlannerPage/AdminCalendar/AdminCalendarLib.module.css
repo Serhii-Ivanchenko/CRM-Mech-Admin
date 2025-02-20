@@ -1,0 +1,234 @@
+:root {
+  --sx-color-primary-container: #943d73 !important; /* Фон події */
+  --sx-color-on-primary-container: #ffffff !important; /* Текст */
+  --sx-color-primary: var(
+    --play-btn-triangle
+  ) !important; /* Ліва лінія події */
+}
+
+:global(.sx__calendar) {
+  background-color: transparent !important;
+  border: none;
+}
+
+:global(.sx__today-button.sx__ripple) {
+  background-color: transparent !important;
+  border: 1px solid var(--play-btn-triangle);
+  color: var(--play-btn-triangle);
+  border-radius: 10px;
+}
+
+:global(.sx__today-button.sx__ripple):hover {
+  background-color: var(--play-btn-triangle) !important;
+  border: 1px solid transparent;
+  color: #ffff;
+}
+
+:global(.sx__chevron-wrapper.sx__ripple) {
+  background-color: transparent !important;
+  border: 1px solid transparent;
+  color: var(--play-btn-triangle);
+}
+
+:global(.sx__chevron-wrapper.sx__ripple):hover {
+  background-color: var(--play-btn-triangle) !important;
+  border: 1px solid transparent;
+  color: #ffff;
+}
+
+:global(.sx__chevron.sx__chevron--previous) {
+  color: var(--play-btn-triangle);
+  border-color: none;
+}
+
+:global(.sx__chevron.sx__chevron--previous):hover {
+  color: #ffff;
+  border-color: #ffff;
+}
+
+:global(.sx__chevron-wrapper .sx__chevron) {
+  border-color: var(--play-btn-triangle);
+}
+
+:global(.sx__chevron-wrapper.sx__ripple:hover .sx__chevron) {
+  border-color: #ffff;
+}
+
+:global(.sx__range-heading) {
+  color: #ffff;
+  border-bottom: 3px solid var(--play-btn-triangle);
+}
+
+:global(.sx__view-selection-selected-item) {
+  background-color: transparent !important;
+  border: 1px solid var(--play-btn-triangle);
+  color: var(--play-btn-triangle);
+  border-radius: 10px;
+}
+
+:global(.sx__view-selection-selected-item):hover {
+  background-color: var(--play-btn-triangle) !important;
+  border: 1px solid transparent;
+  color: #ffff;
+}
+
+:global(.sx__date-input-label) {
+  display: none;
+}
+
+:global(.sx__calendar-header .sx__date-input) {
+  color: var(--light-gray);
+  background: transparent;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  font-variant: small-caps;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+:global(.sx__date-input-wrapper) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-input);
+  border-radius: 10px;
+}
+
+:global(.sx__view-selection-items) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-input);
+  border-radius: 10px;
+}
+
+:global(.sx__view-selection-item.is-selected) {
+  border-bottom: 3px solid var(--play-btn-triangle);
+  color: var(--play-btn-triangle);
+  background-color: transparent;
+}
+
+:global(.sx__week-header-border) {
+  display: none;
+}
+
+:global(.sx__week-header-content) {
+  border-radius: 12px;
+  background-color: transparent !important;
+}
+
+:global(.sx__date-picker-popup.bottom-end) {
+  background-color: var(--bg-input);
+  border-radius: 10px;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+:global(.sx__date-picker-popup) {
+  overflow: hidden;
+}
+
+:global(.sx__week-header) {
+  border-radius: 12px;
+  background: none;
+}
+
+:global(.sx__week-grid__date-axis) {
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+:global(.sx__week-grid__date) {
+  background: var(--CRM-modal-InputBG, #2d3038);
+  display: flex;
+  padding: 10px 55px;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+
+  border-radius: 12px;
+  background: var(--CRM-modal-InputBG, #2d3038);
+}
+
+:global(.sx__week-grid__day-name) {
+  color: var(--White, #fff);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+:global(.sx__week-grid__date-number) {
+  color: var(--White, #fff);
+  font-family: "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+:global(.sx__time-grid-day) {
+  border-left: none;
+}
+
+:global(.sx__week-grid__hour) {
+  border-top: none;
+}
+
+:global(.sx__week-grid__hour-text) {
+  color: var(--White, #fff);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+:global(.sx__time-grid-event) {
+  cursor: pointer;
+}
+
+:global(.sx__time-grid-event-title) {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+:global(.sx__time-grid-event-time) {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+:global(.sx__view-container) {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+:global(.sx__week-wrapper) {
+  padding-right: 20px;
+}
+
+:global(.sx__view-container)::-webkit-scrollbar {
+  width: 8px;
+}
+
+:global(.sx__view-container)::-webkit-scrollbar-thumb {
+  background-color: var(--main-gray);
+  border-radius: 4px;
+}
+
+:global(.sx__view-container)::-webkit-scrollbar-track {
+  background-color: var(--bg);
+  border-radius: 4px;
+}
