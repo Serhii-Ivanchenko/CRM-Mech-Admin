@@ -94,14 +94,12 @@ export default function CardItemLeads({ record, onDragStart }) {
 
   const handleDragStart = (e) => {
     setIsDragging(true);
+    setTimeout(() => {
+      e.target.classList.add(styles.dragging);
+    }, 0);
+  
     onDragStart(e, record.id);
-
-    // Відключаємо стандартне перетягування
-    const img = new Image();
-    img.src = "";
-    e.dataTransfer.setDragImage(img, 0, 0);
   };
-
   const handleDrag = (e) => {
     if (draggingElement) {
       const currentX = e.clientX;
@@ -116,15 +114,7 @@ export default function CardItemLeads({ record, onDragStart }) {
   };
   const handleDragEnd = (e) => {
     setIsDragging(false);
-
-    // Відновлюємо початковий стан оригінального елемента
-    e.target.style.transform = "";
-
-    // Видаляємо дублікат
-    if (draggingElement) {
-      document.body.removeChild(draggingElement);
-      setDraggingElement(null);
-    }
+    e.target.classList.remove(styles.dragging);
   };
 
   const avatarPhoto = photoUrl || AvatarImg;

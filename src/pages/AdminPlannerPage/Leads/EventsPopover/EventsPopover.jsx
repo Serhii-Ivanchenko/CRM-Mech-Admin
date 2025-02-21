@@ -1,9 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./EventsPopover.module.css";
 import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
 
 const EventsPopover = ({ status, currentEvent, onChangeEvent, onClosePopover }) => {
   const [eventsList, setEventsList] = useState([]);
+  const popoverRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
+        onClosePopover();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClosePopover]);
 
   useEffect(() => {
     if (status) {
@@ -19,7 +34,7 @@ const EventsPopover = ({ status, currentEvent, onChangeEvent, onClosePopover }) 
   };
 
   return (
-    <div className={styles.popoverContainer}>
+    <div className={styles.popoverContainer} ref={popoverRef}>
       <ul className={styles.eventsList}>
         {eventsList.map((event, index) => (
           <li
