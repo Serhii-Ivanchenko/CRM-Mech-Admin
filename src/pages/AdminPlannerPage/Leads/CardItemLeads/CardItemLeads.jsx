@@ -17,7 +17,6 @@ import { RiBusWifiFill } from "react-icons/ri";
 import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
 import MenegerPopover from "../MenegerPopover/MenegerPopover";
 import CardSettingsBtn from "../CardSettingsBtn/CardSettingsBtn";
-import useOutsideClick from "../../../../utils/CrmAdminUtils/useOutsideClick";
 import EventsPopover from "../EventsPopover/EventsPopover";
 
 const staffs = [
@@ -73,7 +72,19 @@ export default function CardItemLeads({ record, onDragStart }) {
     post,
   } = record;
 
-  useOutsideClick(modalRef, () => setIsModalStaffPlus(false));
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalStaffPlus(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     if (status && eventOptions[status]) {

@@ -1,13 +1,24 @@
 import { HiDotsVertical } from "react-icons/hi";
 import { BsPencil } from "react-icons/bs";
 import styles from "./CardSettingsBtn.module.css";
-import { useRef } from "react";
-import useOutsideClick from "../../../../utils/CrmAdminUtils/useOutsideClick";
+import { useRef, useEffect } from "react";
 
-function CardSettingsBtn({ isOpen, onClick, onClose, onEdit  }) {
+function CardSettingsBtn({ isOpen, onClick, onClose, onEdit }) {
   const popoverSettingsRef = useRef(null);
 
-  useOutsideClick(popoverSettingsRef, onClose);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popoverSettingsRef.current && !popoverSettingsRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
 
   const handleEditEvent = () => {
     onEdit();
