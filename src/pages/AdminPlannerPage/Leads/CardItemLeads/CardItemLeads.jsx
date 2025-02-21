@@ -17,7 +17,6 @@ import { RiBusWifiFill } from "react-icons/ri";
 import { eventOptions } from "../../../../utils/CrmAdminUtils/dataToCrmAdmin";
 import MenegerPopover from "../MenegerPopover/MenegerPopover";
 import CardSettingsBtn from "../CardSettingsBtn/CardSettingsBtn";
-import useOutsideClick from "../../../../utils/CrmAdminUtils/useOutsideClick";
 import EventsPopover from "../EventsPopover/EventsPopover";
 
 const staffs = [
@@ -73,7 +72,19 @@ export default function CardItemLeads({ record, onDragStart }) {
     post,
   } = record;
 
-  useOutsideClick(modalRef, () => setIsModalStaffPlus(false));
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalStaffPlus(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     if (status && eventOptions[status]) {
@@ -83,14 +94,12 @@ export default function CardItemLeads({ record, onDragStart }) {
 
   const handleDragStart = (e) => {
     setIsDragging(true);
+    setTimeout(() => {
+      e.target.classList.add(styles.dragging);
+    }, 0);
+  
     onDragStart(e, record.id);
-
-    // Відключаємо стандартне перетягування
-    const img = new Image();
-    img.src = "";
-    e.dataTransfer.setDragImage(img, 0, 0);
   };
-
   const handleDrag = (e) => {
     if (draggingElement) {
       const currentX = e.clientX;
@@ -105,15 +114,7 @@ export default function CardItemLeads({ record, onDragStart }) {
   };
   const handleDragEnd = (e) => {
     setIsDragging(false);
-
-    // Відновлюємо початковий стан оригінального елемента
-    e.target.style.transform = "";
-
-    // Видаляємо дублікат
-    if (draggingElement) {
-      document.body.removeChild(draggingElement);
-      setDraggingElement(null);
-    }
+    e.target.classList.remove(styles.dragging);
   };
 
   const avatarPhoto = photoUrl || AvatarImg;

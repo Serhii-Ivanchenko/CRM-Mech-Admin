@@ -1,12 +1,22 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import css from "./MenegerPopover.module.css";
-import useOutsideClick from "../../../../utils/CrmAdminUtils/useOutsideClick";
 
 const MenegerPopover = ({ onClose, staffs, onStaffSelect, offsetLeft = 0 }) => {
   const popoverRef = useRef(null);
 
-  // Використовуємо хук для обробки кліків поза поповер
-  useOutsideClick(popoverRef, onClose);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
 
   return (
     <div
