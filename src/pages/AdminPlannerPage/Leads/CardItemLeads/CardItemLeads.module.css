@@ -87,7 +87,6 @@
 }
 
 .eventContainer {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 13px;
@@ -96,6 +95,7 @@
 }
 
 .eventInfo {
+  position: relative;
   display: flex;
   gap: 10px;
   align-items: center;
